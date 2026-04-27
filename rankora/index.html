@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Turn your dead, parked domains into automated income-generating websites. Launch an SEO-optimized blog, business site, or product page in minutes — no code required." />
+<title>Revive — Turn Dormant Domains Into Living Assets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700&family=Montserrat:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor">
+  <div class="cursor__dot"></div>
+  <div class="cursor__ring"></div>
+  <div class="cursor__label" id="cursorLabel"></div>
+</div>
+
+<!-- Page load reveal -->
+<div class="page-load" id="pageLoad">
+  <div class="page-load__word">
+    <span>R</span><span>A</span><span>N</span><span>K</span><span>O</span><span>R</span><span>A</span>
+  </div>
+</div>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#" class="brand">
+      <span class="brand__mark">✻</span>
+      <span class="brand__text">Rankora<span class="brand__amp">.</span></span>
+    </a>
+    <nav class="nav__links">
+      <a href="#issue">The Issue</a>
+      <a href="#templates">Templates</a>
+      <a href="#how">Process</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    <div class="nav__cta">
+      <a href="#templates" class="btn btn--ink" data-magnetic data-cursor="Start →">Start a site →</a>
+    </div>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===================== HERO — editorial magazine ===================== -->
+<section class="hero">
+  <div class="container">
+    <!-- Masthead row -->
+    <div class="masthead">
+      <div class="masthead__left">
+        <div class="masthead__vol">VOL. 04 · ISSUE 2026</div>
+        <div class="masthead__city">NEW YORK · LONDON · TOKYO</div>
+      </div>
+      <div class="masthead__center">The Revival Quarterly</div>
+      <div class="masthead__right">
+        <div class="masthead__date">APRIL &nbsp;·&nbsp; $00.00</div>
+        <div class="masthead__tag">A Field Guide for Domain Owners</div>
+      </div>
+    </div>
+
+    <div class="hero__grid" data-scroll-fade>
+      <!-- LEFT: Main title -->
+      <div class="hero__title-wrap">
+        <h1 class="hero__title" data-split-title>
+          <span class="hero__title-row">
+            <span class="serif-italic">Revive</span>
+            <span class="hero__ornament">✻</span>
+          </span>
+          <span class="hero__title-row hero__title-row--tight">
+            Your <span class="crossout" data-crossout>Dead</span>
+          </span>
+          <span class="hero__title-row">Domains.</span>
+        </h1>
+
+        <p class="hero__deck" data-reveal>
+          Stop paying renewals on parked pages no one reads. Point a domain here,
+          pick one of three editorial templates, and we publish an SEO-optimised
+          site that attracts readers, captures leads, and compounds value —
+          <em>quietly, on autopilot.</em>
+        </p>
+
+        <div class="hero__cta" data-reveal>
+          <a href="#pricing" class="btn btn--primary" data-magnetic data-cursor="Click →" data-magnetic data-cursor="Start →">Revive my first domain</a>
+          <a href="#templates" class="btn btn--link" data-cursor="Scroll ↓">Read the issue ↓</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Editor's note / stat -->
+      <aside class="hero__note" data-reveal data-tilt>
+        <div class="hero__note-stat">
+          <div class="hero__note-num">420+</div>
+          <div class="hero__note-lbl">domains revived, <br/>quietly earning.</div>
+        </div>
+        <div class="hero__note-divider"></div>
+        <p class="hero__note-text">
+          <span class="drop-cap">W</span>e built this for owners of
+          dormant portfolios — the premium four-letter .coms, the
+          half-finished project names, the birthday impulse buys.
+          Every domain deserves a second chapter.
+        </p>
+        <div class="hero__note-sig">— The Editors</div>
+      </aside>
+    </div>
+
+    <!-- Bottom strip -->
+    <div class="hero__strip">
+      <span>◈ Three templates included</span>
+      <span>◈ Live in under five minutes</span>
+      <span>◈ No developer required</span>
+      <span>◈ Cancel anytime</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MARQUEE ===================== -->
+<div class="marquee">
+  <div class="marquee__track">
+    <span>Domain Monetization ✻</span><span>SEO Autopilot ✻</span><span>Automated Blogging ✻</span><span>Keyword Ranking ✻</span><span>Affiliate Revenue ✻</span><span>Content Syndication ✻</span><span>Domain Flipping ✻</span><span>Passive Income ✻</span><span>Backlink Authority ✻</span><span>Lead Generation ✻</span>
+    <span aria-hidden="true">Domain Monetization ✻</span><span aria-hidden="true">SEO Autopilot ✻</span><span aria-hidden="true">Automated Blogging ✻</span><span aria-hidden="true">Keyword Ranking ✻</span><span aria-hidden="true">Affiliate Revenue ✻</span><span aria-hidden="true">Content Syndication ✻</span><span aria-hidden="true">Domain Flipping ✻</span><span aria-hidden="true">Passive Income ✻</span><span aria-hidden="true">Backlink Authority ✻</span><span aria-hidden="true">Lead Generation ✻</span>
+  </div>
+</div>
+
+<!-- ===================== THE ISSUE — problem section ===================== -->
+<section class="issue" id="issue">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__eyebrow">— Ch. 01</div>
+      <h2 class="section-head__title">
+        Every parked domain is a<br/>
+        <span class="serif-italic">small, silent, expensive tragedy.</span>
+      </h2>
+    </div>
+
+    <div class="issue__grid">
+      <article class="issue-card" data-reveal data-cursor="Read">
+        <div class="issue-card__num">01</div>
+        <h3>The <em>silence</em> of the parked page.</h3>
+        <p>
+          Registrar "for sale" parking pages convert below 0.2%. Your domain is
+          invisible to both buyers and to Google — a page that no one visits,
+          and a page that no one is meant to.
+        </p>
+      </article>
+
+      <article class="issue-card" data-reveal data-cursor="Read">
+        <div class="issue-card__num">02</div>
+        <h3>The <em>cost</em> of building one site.</h3>
+        <p>
+          To launch properly, you'd need a developer, a writer, a designer and
+          an SEO strategist. Roughly $5,000 and two months — before the first
+          article is even published.
+        </p>
+      </article>
+
+      <article class="issue-card" data-reveal data-cursor="Read">
+        <div class="issue-card__num">03</div>
+        <h3>The <em>drip</em> of the renewal fee.</h3>
+        <p>
+          Twelve dollars, fifty domains, five years. That's three thousand
+          dollars — quietly flushed on digital land you're not farming. The
+          spreadsheet hides it well.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TEMPLATES — the star ===================== -->
+<section class="templates" id="templates">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__eyebrow">— Ch. 02</div>
+      <h2 class="section-head__title">
+        Three templates.<br/>
+        <span class="serif-italic">Three kinds of second life.</span>
+      </h2>
+      <p class="section-head__sub">
+        Each is hand-designed, mobile-perfect, and SEO-tuned.
+        Switch between them at any time — nothing to rebuild.
+      </p>
+    </div>
+
+    <!-- Template switcher -->
+    <div class="tpl-tabs" role="tablist">
+      <button class="tpl-tab is-active" data-tpl="1" role="tab">
+        <span class="tpl-tab__num">№ 01</span>
+        <span class="tpl-tab__name">Domain Blogger</span>
+        <span class="tpl-tab__desc">Actively sell the domain.</span>
+      </button>
+      <button class="tpl-tab" data-tpl="2" role="tab">
+        <span class="tpl-tab__num">№ 02</span>
+        <span class="tpl-tab__name">Business Blog</span>
+        <span class="tpl-tab__desc">For any brand or company.</span>
+      </button>
+      <button class="tpl-tab" data-tpl="3" role="tab">
+        <span class="tpl-tab__num">№ 03</span>
+        <span class="tpl-tab__name">Product Autoblog</span>
+        <span class="tpl-tab__desc">Single product, pure focus.</span>
+      </button>
+    </div>
+
+    <!-- TEMPLATE 1 -->
+    <div class="tpl-panel is-active" data-panel="1">
+      <div class="tpl-panel__copy">
+        <div class="tpl-panel__chapter">Template №01</div>
+        <h3 class="tpl-panel__title"><span class="serif-italic">Domain</span> Blogger</h3>
+        <p class="tpl-panel__lead">
+          Promote the domain while the domain promotes itself. A clean
+          masthead announces the listing; beneath it, a steady stream of
+          niche articles quietly builds topical authority, traffic, and price.
+        </p>
+        <ul class="feat-list">
+          <li>A prominent "for sale" masthead with offer form</li>
+          <li>Weekly auto-published articles in your domain's niche</li>
+          <li>Lead capture — offers land directly in your inbox</li>
+          <li>The longer it runs, the more the domain is worth</li>
+        </ul>
+        <button type="button" class="btn btn--ink" data-magnetic data-cursor="Preview →" data-open-tpl="blog">Use this template →</button>
+      </div>
+
+      <div class="tpl-panel__visual">
+        <!-- Editorial site mock — Template 1 -->
+        <div class="mock mock--editorial">
+          <div class="mock__header">
+            <span class="mock__logo"><em>Archived</em> &amp; Co.</span>
+            <span class="mock__nav">Home · Journal · Contact · <strong>For Sale</strong></span>
+          </div>
+          <div class="mock__banner">
+            <div>
+              <div class="mock__banner-eye">★ PREMIUM DOMAIN · FOR SALE</div>
+              <div class="mock__banner-dom">yourdomain.com</div>
+              <div class="mock__banner-price">Asking $8,500 <span>· or make an offer</span></div>
+            </div>
+            <button class="btn btn--primary btn--sm">Make offer</button>
+          </div>
+          <div class="mock__section-head">
+            <span class="mock__eye">— The Journal</span>
+            <h4>Notes on <em>short names</em> &amp; <em>long memories</em>.</h4>
+          </div>
+          <div class="mock__articles">
+            <div class="mock__article">
+              <div class="mock__thumb mock__thumb--1"></div>
+              <div>
+                <div class="mock__article-kicker">INVESTING · 3 MIN</div>
+                <div class="mock__article-title">Why four-letter .coms became quiet real estate.</div>
+              </div>
+            </div>
+            <div class="mock__article">
+              <div class="mock__thumb mock__thumb--2"></div>
+              <div>
+                <div class="mock__article-kicker">CASE STUDY · 7 MIN</div>
+                <div class="mock__article-title">How one parked name sold for $32,000.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMPLATE 2 -->
+    <div class="tpl-panel" data-panel="2">
+      <div class="tpl-panel__copy">
+        <div class="tpl-panel__chapter">Template №02</div>
+        <h3 class="tpl-panel__title"><span class="serif-italic">Business</span> Blog</h3>
+        <p class="tpl-panel__lead">
+          A full business website — about, services, contact — paired with a
+          weekly content engine that earns it traffic from Google.
+          The front door and the salesperson, in one.
+        </p>
+        <ul class="feat-list">
+          <li>Hero, services, testimonials and contact form</li>
+          <li>Automatic niche blog — schedule or on-demand</li>
+          <li>Lead capture wired to your inbox or CRM</li>
+          <li>Schema, sitemap and Core Web Vitals, already green</li>
+        </ul>
+        <button type="button" class="btn btn--ink" data-magnetic data-cursor="Preview →" data-open-tpl="business">Use this template →</button>
+      </div>
+
+      <div class="tpl-panel__visual">
+        <div class="mock mock--business">
+          <div class="mock__header mock__header--dark">
+            <span class="mock__logo"><strong>NORTHSTAR</strong> — HVAC</span>
+            <span class="mock__nav">Services · About · Contact · <strong>Book</strong></span>
+          </div>
+          <div class="mock__biz-hero">
+            <div class="mock__biz-eye">— Established 2008 · Licensed &amp; insured</div>
+            <h4 class="mock__biz-h1">Heating &amp; cooling,<br/><em>done right</em> the first time.</h4>
+            <div class="mock__biz-ctas">
+              <span class="btn btn--primary btn--sm">Book service</span>
+              <span class="btn btn--outline btn--sm">Free quote</span>
+            </div>
+          </div>
+          <div class="mock__services">
+            <div class="mock__svc"><span>01</span><strong>AC repair</strong></div>
+            <div class="mock__svc"><span>02</span><strong>Heating</strong></div>
+            <div class="mock__svc"><span>03</span><strong>Ventilation</strong></div>
+            <div class="mock__svc"><span>04</span><strong>Maintenance</strong></div>
+          </div>
+          <div class="mock__journal">
+            <span class="mock__eye">— From the journal</span>
+            <div class="mock__row">→ When should you replace a 15-year-old furnace?</div>
+            <div class="mock__row">→ Heat pump vs. gas: which wins in 2026?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMPLATE 3 -->
+    <div class="tpl-panel" data-panel="3">
+      <div class="tpl-panel__copy">
+        <div class="tpl-panel__chapter">Template №03</div>
+        <h3 class="tpl-panel__title"><span class="serif-italic">Product</span> Autoblog</h3>
+        <p class="tpl-panel__lead">
+          Obsessively focused on one product or service. Pure conversion on
+          the home page; a halo of long-tail articles around it that feed
+          the front door with steady, targeted traffic.
+        </p>
+        <ul class="feat-list">
+          <li>A product hero with benefits, reviews and buy button</li>
+          <li>Auto-published "related" pieces for long-tail SEO</li>
+          <li>Affiliate cloaking and click tracking built in</li>
+          <li>Plug in Stripe, Gumroad, or Amazon Associates</li>
+        </ul>
+        <button type="button" class="btn btn--ink" data-magnetic data-cursor="Preview →" data-open-tpl="product">Use this template →</button>
+      </div>
+
+      <div class="tpl-panel__visual">
+        <div class="mock mock--product">
+          <div class="mock__header">
+            <span class="mock__logo"><em>Still</em>.</span>
+            <span class="mock__nav">Shop · Reviews · Guides · <strong>Buy</strong></span>
+          </div>
+          <div class="mock__prod">
+            <div class="mock__prod-img">
+              <span class="mock__prod-ornament">✻</span>
+            </div>
+            <div class="mock__prod-copy">
+              <div class="mock__prod-kicker">— The #1 rated sleep mask, 2026</div>
+              <h4 class="mock__prod-title">A night of <em>real</em> darkness.</h4>
+              <div class="mock__prod-rating">★★★★★ <span>1,204 reviews</span></div>
+              <div class="mock__prod-price"><strong>$29</strong> <s>$49</s> <span class="mock__prod-save">save 40%</span></div>
+              <div class="mock__prod-ctas">
+                <span class="btn btn--primary btn--sm">Buy now</span>
+                <span class="btn btn--outline btn--sm">Read review</span>
+              </div>
+            </div>
+          </div>
+          <div class="mock__related">
+            <span class="mock__eye">— Related reading</span>
+            <div class="mock__row">▸ The best sleep masks for side sleepers.</div>
+            <div class="mock__row">▸ Silk vs. memory foam: which is kinder?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section class="process" id="how">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__eyebrow">— Ch. 03</div>
+      <h2 class="section-head__title">
+        From parked<br/>
+        <span class="serif-italic">to profitable,</span> in four notes.
+      </h2>
+    </div>
+
+    <ol class="process__list">
+      <li class="process-step" data-reveal>
+        <div class="process-step__num">I.</div>
+        <div class="process-step__body">
+          <h3>Point the domain.</h3>
+          <p>Add a single DNS record at your registrar. Takes less than sixty seconds. We support every TLD.</p>
+        </div>
+      </li>
+      <li class="process-step" data-reveal>
+        <div class="process-step__num">II.</div>
+        <div class="process-step__body">
+          <h3>Choose a template.</h3>
+          <p>Domain Blogger, Business Blog, or Product Autoblog. Switch anytime — with zero rebuilding.</p>
+        </div>
+      </li>
+      <li class="process-step" data-reveal>
+        <div class="process-step__num">III.</div>
+        <div class="process-step__body">
+          <h3>Name your niche.</h3>
+          <p>One short line — <em>"orthopaedic insoles for nurses"</em> — and our engine handles keyword research.</p>
+        </div>
+      </li>
+      <li class="process-step" data-reveal>
+        <div class="process-step__num">IV.</div>
+        <div class="process-step__body">
+          <h3>Earn, quietly.</h3>
+          <p>Articles publish on schedule. Google indexes. The domain collects readers, leads, and revenue.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== FEATURES ===================== -->
+<section class="features">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__eyebrow">— Ch. 04</div>
+      <h2 class="section-head__title">
+        One backend.<br/>
+        <span class="serif-italic">Infinite domains.</span>
+      </h2>
+    </div>
+
+    <div class="feat-grid">
+      <div class="feat" data-reveal data-tilt>
+        <div class="feat__num">①</div>
+        <h3>Smart domain detection</h3>
+        <p>Each domain automatically serves its own branding, niche and content — from one shared dashboard.</p>
+      </div>
+      <div class="feat" data-reveal data-tilt>
+        <div class="feat__num">②</div>
+        <h3>Core Web Vitals: 100</h3>
+        <p>Static-first rendering, edge-cached assets, and lazy loading. Google loves it. Visitors stay.</p>
+      </div>
+      <div class="feat" data-reveal data-tilt>
+        <div class="feat__num">③</div>
+        <h3>Autoblog engine</h3>
+        <p>Fresh, SEO-targeted articles on your schedule. Pause, approve, or run full autopilot.</p>
+      </div>
+      <div class="feat" data-reveal data-tilt>
+        <div class="feat__num">④</div>
+        <h3>You own everything</h3>
+        <p>Export to WordPress, Ghost or plain HTML any time. No lock-in, no surprises.</p>
+      </div>
+      <div class="feat" data-reveal data-tilt>
+        <div class="feat__num">⑤</div>
+        <h3>Brand in two clicks</h3>
+        <p>Upload a logo, pick two colours, write one tagline. Every template instantly matches.</p>
+      </div>
+      <div class="feat" data-reveal data-tilt>
+        <div class="feat__num">⑥</div>
+        <h3>Built-in analytics</h3>
+        <p>Traffic, top pages, revenue and keyword rankings — for every domain, in one pane.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LETTERS / TESTIMONIALS ===================== -->
+<section class="letters">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__eyebrow">— Ch. 05 · Letters to the editor</div>
+      <h2 class="section-head__title">
+        <em>"I had twenty-three domains doing nothing.<br/>
+        Now they pay the mortgage."</em>
+      </h2>
+    </div>
+
+    <div class="letters__grid">
+      <figure class="letter" data-reveal data-tilt data-cursor="Read">
+        <blockquote>
+          "I'd been sitting on a four-letter .com for six years. I dropped it
+          into the Domain Blogger template — and it sold for twelve-four
+          within ninety days."
+        </blockquote>
+        <figcaption>
+          <div class="letter__avatar letter__avatar--1">M</div>
+          <div>
+            <div class="letter__name">Marcus R.</div>
+            <div class="letter__meta">Domain investor · Austin</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="letter" data-reveal data-tilt data-cursor="Read">
+        <blockquote>
+          "My HVAC business never had a proper site. Two weeks in, I had
+          fourteen booking forms from Google. It paid for itself instantly."
+        </blockquote>
+        <figcaption>
+          <div class="letter__avatar letter__avatar--2">D</div>
+          <div>
+            <div class="letter__name">Dana P.</div>
+            <div class="letter__meta">Owner · NorthStar HVAC</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="letter" data-reveal data-tilt data-cursor="Read">
+        <blockquote>
+          "Seven product autoblogs in Amazon categories I already reviewed.
+          Thirty-eight hundred in affiliate revenue by month three —
+          entirely passive."
+        </blockquote>
+        <figcaption>
+          <div class="letter__avatar letter__avatar--3">P</div>
+          <div>
+            <div class="letter__name">Priya S.</div>
+            <div class="letter__meta">Affiliate publisher</div>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESULTS NUMBERS ===================== -->
+<section class="numbers">
+  <div class="container">
+    <div class="numbers__grid">
+      <div class="number" data-reveal>
+        <div class="number__big">420<span>+</span></div>
+        <div class="number__lbl">dormant domains revived</div>
+      </div>
+      <div class="number" data-reveal>
+        <div class="number__big">$1.2<span>M</span></div>
+        <div class="number__lbl">earned by customers · 2025</div>
+      </div>
+      <div class="number" data-reveal>
+        <div class="number__big">4.9<span>/5</span></div>
+        <div class="number__lbl">average rating · 187 reviews</div>
+      </div>
+      <div class="number" data-reveal>
+        <div class="number__big">&lt;5<span>min</span></div>
+        <div class="number__lbl">time to go live</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__eyebrow">— Ch. 06 · Subscribe</div>
+      <h2 class="section-head__title">
+        Less than a <span class="serif-italic">renewal fee.</span><br/>
+        Pays for itself <span class="serif-italic">once.</span>
+      </h2>
+      <p class="section-head__sub">
+        Every plan includes all three templates, the autoblog engine,
+        analytics and full support.
+      </p>
+    </div>
+
+    <div class="plans">
+      <article class="plan" data-reveal data-tilt>
+        <div class="plan__name">Starter</div>
+        <div class="plan__price"><span>$</span>19<em>/mo</em></div>
+        <p class="plan__sub">For your first revived domain.</p>
+        <ul class="plan__feats">
+          <li>1 domain</li>
+          <li>All three templates</li>
+          <li>4 auto-articles · monthly</li>
+          <li>Core analytics</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#" class="btn btn--outline btn--block" data-magnetic data-cursor="Click →">Start with one →</a>
+      </article>
+
+      <article class="plan plan--featured" data-reveal data-tilt>
+        <div class="plan__badge">most chosen</div>
+        <div class="plan__name">Portfolio</div>
+        <div class="plan__price"><span>$</span>49<em>/mo</em></div>
+        <p class="plan__sub">Revive an entire collection.</p>
+        <ul class="plan__feats">
+          <li><strong>Up to 25 domains</strong></li>
+          <li>All three templates</li>
+          <li>20 articles · domain · month</li>
+          <li>Advanced SEO &amp; schema</li>
+          <li>Lead capture &amp; CRM webhooks</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="#" class="btn btn--primary btn--block">Revive my portfolio →</a>
+      </article>
+
+      <article class="plan" data-reveal data-tilt>
+        <div class="plan__name">Agency</div>
+        <div class="plan__price"><span>$</span>149<em>/mo</em></div>
+        <p class="plan__sub">For agencies and large portfolios.</p>
+        <ul class="plan__feats">
+          <li><strong>Unlimited domains</strong></li>
+          <li>White-label dashboard</li>
+          <li>Unlimited auto-articles</li>
+          <li>API access</li>
+          <li>Dedicated success manager</li>
+        </ul>
+        <a href="#" class="btn btn--outline btn--block" data-magnetic data-cursor="Click →">Talk to us →</a>
+      </article>
+    </div>
+
+    <p class="guarantee">
+      <span class="guarantee__mark">✻</span>
+      <em>Thirty-day, no-questions money-back guarantee.</em>
+      Launch a site, see the traffic, keep the work. If it isn't for you, we refund — in full.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq">
+  <div class="container faq__inner">
+    <div class="section-head section-head--left">
+      <div class="section-head__eyebrow">— Appendix · Questions</div>
+      <h2 class="section-head__title">
+        Asked,<br/><span class="serif-italic">often.</span>
+      </h2>
+    </div>
+
+    <div class="faq__list">
+      <details class="faq__item" data-reveal open>
+        <summary>Do I need any technical skill to launch a site?</summary>
+        <p>Not at all. If you can copy-paste a line of text at your domain registrar, you can launch a site here. Hosting, templates, SEO and content are all handled for you.</p>
+      </details>
+      <details class="faq__item" data-reveal>
+        <summary>Can I change templates after launch?</summary>
+        <p>Yes. Switch between Domain Blogger, Business Blog, and Product Autoblog at any time. All your content carries over — no rebuilding.</p>
+      </details>
+      <details class="faq__item" data-reveal>
+        <summary>Who actually writes the articles?</summary>
+        <p>Our autoblog engine. It researches keywords for your niche, drafts the article, and publishes on your approved schedule. You can review each piece, edit, or enable full autopilot.</p>
+      </details>
+      <details class="faq__item" data-reveal>
+        <summary>Will Google penalise automated content?</summary>
+        <p>Only when it's thin or spammy. Our content is researched, structured with schema, internally linked, and passes helpful-content heuristics. Current customers rank on page one for hundreds of terms.</p>
+      </details>
+      <details class="faq__item" data-reveal>
+        <summary>I have fifty-plus domains. Is that supported?</summary>
+        <p>Very much so. The Portfolio and Agency plans are designed for this — one dashboard, unlimited domains, each with its own niche, branding and content pipeline.</p>
+      </details>
+      <details class="faq__item" data-reveal>
+        <summary>What if I want to leave later?</summary>
+        <p>Full export, one click. Take your content as WordPress XML, Ghost JSON, or plain HTML. The domain, content and revenue are always yours.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact__grid">
+      <div class="contact__left">
+        <div class="section-head__eyebrow">— Host with Rankora</div>
+        <h2 class="contact__title">
+          Love the preview?<br/>
+          <span class="serif-italic">Let's publish it.</span>
+        </h2>
+        <p class="contact__lead">
+          Drop your details — we'll reach out within a business day with your hosting plan, domain connection steps, and the first content batch ready for approval.
+        </p>
+        <ul class="contact__meta">
+          <li><strong>Email</strong><span>hello@rankora.co</span></li>
+          <li><strong>Reply within</strong><span>1 business day</span></li>
+          <li><strong>Setup time</strong><span>under 5 minutes</span></li>
+        </ul>
+      </div>
+
+      <form class="contact__form" id="contactForm">
+        <label class="field">
+          <span class="field__label">Your name</span>
+          <input type="text" name="name" placeholder="Jane Doe" required />
+        </label>
+        <label class="field">
+          <span class="field__label">Email</span>
+          <input type="email" name="email" placeholder="jane@domain.com" required />
+        </label>
+        <label class="field">
+          <span class="field__label">Domain</span>
+          <input type="text" name="domain" placeholder="yourdomain.com" />
+        </label>
+        <label class="field">
+          <span class="field__label">Which template</span>
+          <select name="template">
+            <option value="blog">Domain Blogger</option>
+            <option value="business">Business Blog</option>
+            <option value="product">Product Autoblog</option>
+          </select>
+        </label>
+        <label class="field field--wide">
+          <span class="field__label">Anything else?</span>
+          <textarea name="message" rows="3" placeholder="Tell us about your portfolio, niche, or questions..."></textarea>
+        </label>
+        <div class="contact__submit">
+          <button type="submit" class="btn btn--primary" data-magnetic data-cursor="Send →">Send &amp; host my site →</button>
+          <span class="contact__reassure">No spam. Unsubscribe any time.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final">
+  <div class="container">
+    <div class="final__box" data-reveal>
+      <div class="final__eye">— Closing note</div>
+      <h2 class="final__title">
+        Your dormant domain is<br/>
+        <span class="serif-italic">one template away</span><br/>
+        from its first sale.
+      </h2>
+      <p class="final__sub">
+        Stop paying renewals on silence. Start compounding SEO, leads and revenue — today.
+      </p>
+      <div class="final__ctas">
+        <a href="#pricing" class="btn btn--primary" data-magnetic data-cursor="Click →">Revive my first domain →</a>
+        <a href="#templates" class="btn btn--link">Browse templates</a>
+      </div>
+      <div class="final__meta">No card required · 5-minute setup · Cancel anytime</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="#" class="brand brand--lg">
+          <span class="brand__mark">✻</span>
+          <span class="brand__text">Rankora<span class="brand__amp">.</span></span>
+        </a>
+        <p>A quiet field guide, and a toolkit, for the owners of dormant digital land.</p>
+      </div>
+
+      <div class="footer__cols">
+        <div>
+          <h4>The Product</h4>
+          <a href="#templates">Templates</a>
+          <a href="#how">Process</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#">Changelog</a>
+        </div>
+        <div>
+          <h4>The House</h4>
+          <a href="#">About</a>
+          <a href="#">Customers</a>
+          <a href="#">Journal</a>
+          <a href="#">Contact</a>
+        </div>
+        <div>
+          <h4>Fine Print</h4>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Refunds</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__word" data-parallax="0.3">REVIVE</div>
+
+    <div class="footer__bottom">
+      <span>© 2026 Revive &amp; Co.</span>
+      <span>Made for domain owners, by domain owners.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== ONBOARDING MODAL ===================== -->
+<div class="tpl-modal" id="tplModal" aria-hidden="true">
+  <div class="tpl-modal__backdrop" data-close></div>
+  <div class="tpl-modal__panel" role="dialog" aria-modal="true">
+    <button class="tpl-modal__close" data-close aria-label="Close onboarding">✕</button>
+    <div class="tpl-modal__head">
+      <div class="tpl-modal__eye">— Onboarding · <span id="tplModalKicker">Template</span></div>
+      <h2 class="tpl-modal__title">
+        Let's build your <span class="serif-italic" id="tplModalType">site</span>.
+      </h2>
+      <p class="tpl-modal__sub">
+        A few details — then we'll generate a <em>live, hostable preview</em> you can share before committing.
+      </p>
+      <div class="tpl-modal__steps">
+        <span class="tpl-modal__step is-active">01 · Details</span>
+        <span class="tpl-modal__step-sep"></span>
+        <span class="tpl-modal__step">02 · Preview</span>
+        <span class="tpl-modal__step-sep"></span>
+        <span class="tpl-modal__step">03 · Host</span>
+      </div>
+    </div>
+
+    <form class="tpl-form" id="tplForm" autocomplete="off">
+      <!-- Fields injected by JS -->
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rankora · Live Preview</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700&family=Montserrat:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="preview.css" />
+</head>
+<body class="preview-body">
+
+<!-- Live-preview ribbon -->
+<div class="preview-ribbon" id="previewRibbon">
+  <div class="preview-ribbon__inner">
+    <span class="preview-ribbon__dot"></span>
+    <span class="preview-ribbon__label">Live preview</span>
+    <span class="preview-ribbon__domain" id="ribbonDomain">yourdomain.com</span>
+    <span class="preview-ribbon__sep"></span>
+    <span class="preview-ribbon__meta" id="ribbonType">Blog template</span>
+  </div>
+  <div class="preview-ribbon__actions">
+    <button class="preview-ribbon__btn preview-ribbon__btn--ghost" id="discardBtn">Discard</button>
+    <button class="preview-ribbon__btn preview-ribbon__btn--primary" id="hostBtn">Host now →</button>
+  </div>
+</div>
+
+<!-- Host-now overlay CTA (floats bottom-right) -->
+<aside class="host-float" id="hostFloat">
+  <div class="host-float__eye">Like what you see?</div>
+  <div class="host-float__title">Let's make it <span class="serif-italic">permanent.</span></div>
+  <button class="host-float__btn" id="hostFloatBtn">Host now →</button>
+</aside>
+
+<!-- Render target -->
+<main id="previewRoot"></main>
+
+<!-- Empty state -->
+<div class="preview-empty" id="previewEmpty" hidden>
+  <div class="preview-empty__inner">
+    <div class="preview-empty__eye">— Nothing to preview yet</div>
+    <h1 class="preview-empty__title">
+      Pick a template,<br/>
+      <span class="serif-italic">fill in the details,</span><br/>
+      and we'll build it here.
+    </h1>
+    <a href="index.html#templates" class="btn btn--primary">Browse templates →</a>
+  </div>
+</div>
+
+<script src="preview.js"></script>
+</body>
+</html>
