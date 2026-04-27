@@ -105,6 +105,13 @@
   }
 
   var site = pickSite();
+
+  // TEMP-FORCE-RANKORA:START — temporary client showcase. Always load Rankora
+  // regardless of hostname; the in-page floating switcher lets clients toggle
+  // between Rankora and Monarque. Remove this block to restore domain routing.
+  site = 'rankora';
+  // TEMP-FORCE-RANKORA:END
+
   var target = site + '/index.html' + location.search + location.hash;
 
   // Tiny delay so the loader is visible — avoids a jarring flash on fast hosts
