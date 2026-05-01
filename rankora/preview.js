@@ -98,7 +98,7 @@
     return `
       <footer class="site-footer">
         <span><em>${brandName('Your Site')}</em> · ${esc(fields.domain || 'yourdomain.com')}</span>
-        <span>© ${new Date().getFullYear()} — Preview built with Rankora</span>
+        <span>© ${new Date().getFullYear()} — Preview built with AI-Smart Blog</span>
       </footer>
     `;
   }
