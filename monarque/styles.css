@@ -216,7 +216,7 @@ em {
   display: inline-block;
   font-family: var(--serif-italic);
   font-style: italic;
-  font-size: clamp(48px, 9vw, 128px);
+  font-size: clamp(24px, 4.6vw, 80px);
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -226,14 +226,23 @@ em {
   animation: loadLetter .6s var(--ease) forwards;
   padding: 0.1em 0;
 }
-.page-load__word span:nth-child(1) { animation-delay: .05s; }
-.page-load__word span:nth-child(2) { animation-delay: .11s; }
-.page-load__word span:nth-child(3) { animation-delay: .17s; color: var(--gold); }
-.page-load__word span:nth-child(4) { animation-delay: .23s; }
-.page-load__word span:nth-child(5) { animation-delay: .29s; }
-.page-load__word span:nth-child(6) { animation-delay: .35s; }
-.page-load__word span:nth-child(7) { animation-delay: .41s; }
-.page-load__word span:nth-child(8) { animation-delay: .47s; }
+.page-load__word span:nth-child(1)  { animation-delay: .050s; color: var(--gold); }
+.page-load__word span:nth-child(2)  { animation-delay: .085s; color: var(--gold); }
+.page-load__word span:nth-child(3)  { animation-delay: .120s; color: var(--gold); }
+.page-load__word span:nth-child(4)  { animation-delay: .155s; color: var(--gold); }
+.page-load__word span:nth-child(5)  { animation-delay: .190s; color: var(--gold); }
+.page-load__word span:nth-child(6)  { animation-delay: .225s; color: var(--gold); }
+.page-load__word span:nth-child(7)  { animation-delay: .260s; color: var(--gold); }
+.page-load__word span:nth-child(8)  { animation-delay: .295s; color: var(--gold); }
+.page-load__word span:nth-child(9)  { animation-delay: .330s; color: var(--gold); }
+.page-load__word span:nth-child(10) { animation-delay: .365s; color: var(--gold); }
+.page-load__word span:nth-child(11) { animation-delay: .400s; }
+.page-load__word span:nth-child(12) { animation-delay: .435s; }
+.page-load__word span:nth-child(13) { animation-delay: .470s; }
+.page-load__word span:nth-child(14) { animation-delay: .505s; }
+.page-load__word span:nth-child(15) { animation-delay: .540s; }
+.page-load__word span:nth-child(16) { animation-delay: .575s; }
+.page-load__word span:nth-child(17) { animation-delay: .610s; }
 @keyframes loadLetter {
   to { opacity: 1; transform: translateY(0); }
 }
