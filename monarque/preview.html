@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MoneyTrainDomains · Marquee Domain Preview</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="preview.css" />
+</head>
+<body class="preview-body">
+
+<!-- Live-preview ribbon -->
+<div class="preview-ribbon" id="previewRibbon">
+  <div class="preview-ribbon__inner">
+    <span class="preview-ribbon__dot"></span>
+    <span class="preview-ribbon__label">Marquee Preview</span>
+    <span class="preview-ribbon__domain" id="ribbonDomain">yourdomain.com</span>
+    <span class="preview-ribbon__sep"></span>
+    <span class="preview-ribbon__meta" id="ribbonType">Domain Sales Landing Page</span>
+  </div>
+  <div class="preview-ribbon__actions">
+    <button class="preview-ribbon__btn preview-ribbon__btn--ghost" id="discardBtn">Discard</button>
+    <button class="preview-ribbon__btn preview-ribbon__btn--primary" id="hostBtn">Get it sold →</button>
+  </div>
+</div>
+
+<!-- Host-now overlay CTA (floats bottom-right) -->
+<aside class="host-float" id="hostFloat">
+  <div class="host-float__eye">Like what you see?</div>
+  <div class="host-float__title">Let's make it <em>permanent.</em></div>
+  <button class="host-float__btn" id="hostFloatBtn">Get it sold →</button>
+</aside>
+
+<!-- Render target -->
+<main id="previewRoot"></main>
+
+<!-- Empty state -->
+<div class="preview-empty" id="previewEmpty" hidden>
+  <div class="preview-empty__inner">
+    <div class="preview-empty__eye">— Nothing to preview yet</div>
+    <h1 class="preview-empty__title">
+      Fill in your domain details,<br/>
+      <em>upload your assets,</em><br/>
+      and we'll build your sales page here.
+    </h1>
+    <a href="index.html#services" class="btn btn--gold">Back to services →</a>
+  </div>
+</div>
+
+<script src="preview.js"></script>
+</body>
+</html>

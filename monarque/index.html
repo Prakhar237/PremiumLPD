@@ -377,7 +377,7 @@
           <span class="service-card__from">Pricing</span>
           <span class="service-card__price">Contact us</span>
         </div>
-        <a href="#contact" class="btn btn--ghost btn--block">Get it sold for premium $$$ →</a>
+        <button type="button" class="btn btn--ghost btn--block" data-open-marquee>Preview your sales page →</button>
       </article>
     </div>
   </div>
@@ -729,6 +729,90 @@
 </footer>
 
 <script src="script.js"></script>
+
+<!-- ===================== MARQUEE ONBOARDING MODAL ===================== -->
+<div class="mq-modal" id="mqModal" aria-hidden="true">
+  <div class="mq-modal__backdrop" data-mq-close></div>
+  <div class="mq-modal__panel" role="dialog" aria-modal="true">
+    <button class="mq-modal__close" data-mq-close aria-label="Close">✕</button>
+    <div class="mq-modal__head">
+      <div class="mq-modal__eye">— Marquee Domain Promotion · Preview</div>
+      <h2 class="mq-modal__title">
+        Let's build your <em>sales page.</em>
+      </h2>
+      <p class="mq-modal__sub">
+        A few details and up to 3 images — then we'll generate a <em>live, premium landing page preview</em> you can share.
+      </p>
+      <div class="mq-modal__steps">
+        <span class="mq-modal__step is-active">01 · Details</span>
+        <span class="mq-modal__step-sep"></span>
+        <span class="mq-modal__step">02 · Preview</span>
+        <span class="mq-modal__step-sep"></span>
+        <span class="mq-modal__step">03 · Promote</span>
+      </div>
+    </div>
+    <form class="mq-form" id="mqForm" autocomplete="off">
+      <!-- Domain -->
+      <div class="mq-form__heading"><span>Domain</span><span class="mq-form__heading-line"></span></div>
+      <label class="mq-field mq-field--wide">
+        <span class="mq-field__label">Domain name *</span>
+        <input type="text" name="domain" placeholder="yourpremiumdomain.com" required />
+      </label>
+      <label class="mq-field">
+        <span class="mq-field__label">Brand name (optional)</span>
+        <input type="text" name="brandName" placeholder="Brand or company name" />
+      </label>
+      <label class="mq-field">
+        <span class="mq-field__label">Tagline (optional)</span>
+        <input type="text" name="tagline" placeholder="A premium digital asset..." />
+      </label>
+
+      <!-- Description -->
+      <div class="mq-form__heading"><span>Description</span><span class="mq-form__heading-line"></span></div>
+      <label class="mq-field mq-field--wide">
+        <span class="mq-field__label">Describe your service or product *</span>
+        <textarea name="description" rows="4" placeholder="Tell potential buyers what this domain represents — the market, the opportunity, the value. This text populates the landing page." required></textarea>
+      </label>
+
+      <!-- Images -->
+      <div class="mq-form__heading"><span>Images (max 3)</span><span class="mq-form__heading-line"></span></div>
+      <div class="mq-field mq-field--wide">
+        <span class="mq-field__label">Image 1 — Logo or brand mark</span>
+        <div class="mq-form__file-wrap">
+          <div class="mq-form__file-preview" data-mq-preview="image1" style="display:none;"></div>
+          <button type="button" class="mq-form__file-btn" data-mq-file-trigger="image1">Choose image</button>
+          <span class="mq-form__file-name" data-mq-file-name="image1">No file chosen</span>
+          <input type="file" name="image1" accept="image/*" data-mq-file-input="image1" />
+        </div>
+      </div>
+      <div class="mq-field mq-field--wide">
+        <span class="mq-field__label">Image 2 — Hero / product shot</span>
+        <div class="mq-form__file-wrap">
+          <div class="mq-form__file-preview" data-mq-preview="image2" style="display:none;"></div>
+          <button type="button" class="mq-form__file-btn" data-mq-file-trigger="image2">Choose image</button>
+          <span class="mq-form__file-name" data-mq-file-name="image2">No file chosen</span>
+          <input type="file" name="image2" accept="image/*" data-mq-file-input="image2" />
+        </div>
+      </div>
+      <div class="mq-field mq-field--wide">
+        <span class="mq-field__label">Image 3 — Additional asset</span>
+        <div class="mq-form__file-wrap">
+          <div class="mq-form__file-preview" data-mq-preview="image3" style="display:none;"></div>
+          <button type="button" class="mq-form__file-btn" data-mq-file-trigger="image3">Choose image</button>
+          <span class="mq-form__file-name" data-mq-file-name="image3">No file chosen</span>
+          <input type="file" name="image3" accept="image/*" data-mq-file-input="image3" />
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="mq-form__submit">
+        <button type="submit" class="btn btn--gold" data-magnetic>Generate live preview →</button>
+        <button type="button" class="mq-form__cancel" data-mq-close>Cancel</button>
+        <span style="font-family:var(--serif-italic);font-style:italic;color:var(--ink-dim);font-size:13px;margin-left:auto;">Opens in a new tab</span>
+      </div>
+    </form>
+  </div>
+</div>
 
 <!-- TEMP-SWITCHER:START — temporary client showcase. Remove this block to restore domain routing. -->
 <style>

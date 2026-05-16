@@ -286,4 +286,114 @@
       }
     });
   }
+  // --------------------------------------------------------
+  // 13. MARQUEE ONBOARDING MODAL + PREVIEW
+  // --------------------------------------------------------
+  const MQ_STORAGE_KEY = 'monarque_preview';
+  const mqModal = document.getElementById('mqModal');
+  const mqForm = document.getElementById('mqForm');
+
+  if (mqModal && mqForm) {
+    function openMqModal() {
+      mqModal.classList.add('is-open');
+      mqModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (lenis) lenis.stop();
+      setTimeout(() => {
+        const firstInput = mqForm.querySelector('input[type="text"]');
+        if (firstInput) firstInput.focus();
+      }, 300);
+    }
+    function closeMqModal() {
+      mqModal.classList.remove('is-open');
+      mqModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lenis) lenis.start();
+    }
+
+    // Open trigger
+    document.querySelectorAll('[data-open-marquee]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openMqModal();
+      });
+    });
+
+    // Close triggers
+    mqModal.addEventListener('click', (e) => {
+      if (e.target.hasAttribute('data-mq-close') || e.target.closest('[data-mq-close]')) {
+        closeMqModal();
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mqModal.classList.contains('is-open')) closeMqModal();
+    });
+
+    // File inputs
+    mqForm.querySelectorAll('[data-mq-file-input]').forEach(input => {
+      const key = input.dataset.mqFileInput;
+      const btn = mqForm.querySelector(`[data-mq-file-trigger="${key}"]`);
+      const nameEl = mqForm.querySelector(`[data-mq-file-name="${key}"]`);
+      const preview = mqForm.querySelector(`[data-mq-preview="${key}"]`);
+
+      if (btn) btn.addEventListener('click', () => input.click());
+      input.addEventListener('change', () => {
+        const file = input.files && input.files[0];
+        if (!file) return;
+        if (file.size > 4 * 1024 * 1024) {
+          nameEl.textContent = 'Too large (max 4MB)';
+          input.value = '';
+          return;
+        }
+        nameEl.textContent = file.name;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          compressMqImage(ev.target.result, 900, (dataUrl) => {
+            input.dataset.dataUrl = dataUrl;
+            if (preview) {
+              preview.style.display = 'block';
+              preview.style.backgroundImage = `url("${dataUrl}")`;
+            }
+          });
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+
+    function compressMqImage(src, maxWidth, cb) {
+      const img = new Image();
+      img.onload = () => {
+        const ratio = Math.min(1, maxWidth / img.width);
+        const w = Math.round(img.width * ratio);
+        const h = Math.round(img.height * ratio);
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        cb(canvas.toDataURL('image/jpeg', 0.82));
+      };
+      img.onerror = () => cb(src);
+      img.src = src;
+    }
+
+    // Submit
+    mqForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(mqForm);
+      const data = { createdAt: Date.now(), fields: {}, images: {} };
+      for (const [k, v] of formData.entries()) {
+        if (typeof v === 'string') data.fields[k] = v.trim();
+      }
+      mqForm.querySelectorAll('[data-mq-file-input]').forEach(input => {
+        if (input.dataset.dataUrl) data.images[input.dataset.mqFileInput] = input.dataset.dataUrl;
+      });
+      try {
+        localStorage.setItem(MQ_STORAGE_KEY, JSON.stringify(data));
+      } catch (err) {
+        alert('Images too large for browser storage — try smaller files.');
+        return;
+      }
+      closeMqModal();
+      window.open('preview.html', '_blank');
+    });
+  }
 })();
