@@ -43,37 +43,40 @@
     return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
   }
 
-  // Fallbacks based on user image prompt
-  const fallbackHero = 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?q=80&w=2000&auto=format&fit=crop';
-  const fallbackCar1 = 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=800&auto=format&fit=crop';
-  const fallbackCar2 = 'https://images.unsplash.com/photo-1631269666993-3d077b941589?q=80&w=800&auto=format&fit=crop';
-  const fallbackCar3 = 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop';
+  // Fallbacks
+  const fallbackHero = 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop';
+  const fallbackArticle1 = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop';
+  const fallbackArticle2 = 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=800&auto=format&fit=crop';
+  const fallbackArticle3 = 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop';
 
   const logoImg = images.image1 ? `<img src="${images.image1}" alt="Logo" />` : `<span class="lp-nav__brand-mark">◆</span>`;
   const heroImg = images.image2 || images.image1 || fallbackHero;
 
-  // Luxora specific content
-  const heroTagline = fields.tagline || 'Discover elite performance, unmatched comfort, and timeless design. Your dream car awaits.';
-  const displayBrand = brandName === 'yourdomain' ? 'Luxora Motors' : brandName;
+  // Domain SEO specific content
+  const defaultTagline = 'An irreplaceable digital asset. The definitive foundation for category dominance.';
+  const defaultDesc = `In the modern digital economy, the right domain is more than just an address—it is a competitive moat. ${esc(domain)} offers immediate brand authority, inherent trust, and an unassailable market position. It is a rare opportunity to acquire a pristine, highly-brandable domain that signals absolute leadership to customers, investors, and competitors alike.`;
+  
+  const heroTagline = fields.tagline || defaultTagline;
+  const heroDesc = fields.description || defaultDesc;
 
-  const services = [
-    { title: 'Premium Collection', desc: 'Handpicked luxury cars from the world\'s most prestigious brands.' },
-    { title: 'Certified Quality', desc: 'All vehicles undergo a rigorous inspection for uncompromised quality.' },
-    { title: 'Concierge Service', desc: 'Personalized assistance for a seamless and luxurious journey.' },
-    { title: 'Aftercare Support', desc: 'Reliable maintenance and support long after you drive away.' }
+  const valueFactors = [
+    { title: 'Immediate Authority', desc: 'A mature digital asset with established authority and trust signals that new domains cannot replicate.' },
+    { title: 'Defensible Moat', desc: 'Strategic positioning in a high-value vertical with undeniable competitive advantages.' },
+    { title: 'Compounding Value', desc: 'Premium domains act as digital real estate, appreciating in value over time.' },
+    { title: 'SEO Supremacy', desc: 'Pre-existing search engine relationships and topical relevance that accelerate growth.' }
   ];
 
-  const cars = [
-    { name: 'Aston Martin DB11', price: '$214,000', engine: '5.2L V12', hp: '606 HP', seats: '4 Seats', img: fallbackCar1 },
-    { name: 'Rolls-Royce Ghost', price: '$332,000', engine: '6.75L V12', hp: '563 HP', seats: '5 Seats', img: fallbackCar2 },
-    { name: 'Ferrari 812 Superfast', price: '$412,000', engine: '6.5L V12', hp: '789 HP', seats: '2 Seats', img: fallbackCar3 }
+  const articles = [
+    { kicker: 'Market Analysis', title: `Why ${esc(domain)} is a generational acquisition.`, excerpt: 'An inside look at the metrics, the market scarcity, and the undeniable leverage of owning a category-defining name.', img: fallbackArticle1, readTime: '5 min read' },
+    { kicker: 'Valuation', title: `The hidden multipliers driving premium property values.`, excerpt: 'Understanding the intrinsic value of digital real estate in an increasingly crowded online ecosystem.', img: fallbackArticle2, readTime: '7 min read' },
+    { kicker: 'Case Study', title: `How an exact-match domain generated $8.4M in organic revenue.`, excerpt: 'A breakdown of the ROI timeline when a brand pivots to a definitive, exact-match asset.', img: fallbackArticle3, readTime: '4 min read' }
   ];
 
   const reasons = [
-    { title: 'Exclusive Selection', desc: 'Access the rarest and most exclusive luxury vehicles.' },
-    { title: 'Unmatched Quality', desc: 'Every car meets our highest standards of excellence.' },
-    { title: 'Client First', desc: 'Your satisfaction and privacy are our top priorities.' },
-    { title: 'Worldwide Delivery', desc: 'Delivering luxury cars to your doorstep.' }
+    { title: 'Exclusive Positioning', desc: 'Access the rarest and most exclusive digital real estate in your vertical.' },
+    { title: 'Unmatched Credibility', desc: 'Every prospect interaction begins with ultimate, unshakeable trust.' },
+    { title: 'Client Confidentiality', desc: 'We facilitate secure, anonymous transfers for high-value assets.' },
+    { title: 'Global Reach', desc: 'A universal asset that transcends borders and regional limitations.' }
   ];
 
   // ── Render ──
@@ -83,68 +86,68 @@
       <nav class="lp-nav">
         <div class="lp-nav__brand">
           ${logoImg}
-          <span>${esc(displayBrand.toUpperCase())}</span>
+          <span>${esc(brandName.toUpperCase())}</span>
         </div>
         <div class="lp-nav__links">
-          <span>HOME</span>
-          <span>INVENTORY</span>
-          <span>SERVICES</span>
-          <span>ABOUT US</span>
-          <span>CONTACT</span>
+          <span>OVERVIEW</span>
+          <span>VALUATION</span>
+          <span>INSIGHTS</span>
+          <span>ADVISORY</span>
         </div>
-        <button class="lp-nav__cta btn--ghost" style="padding: 10px 24px; border: 1px solid var(--gold); background: transparent; color: var(--gold);">BOOK A TEST DRIVE</button>
+        <button class="lp-nav__cta btn--ghost" style="padding: 10px 24px; border: 1px solid var(--gold); background: transparent; color: var(--gold);">MAKE AN OFFER</button>
       </nav>
 
       <!-- Hero -->
       <section class="lp-hero" style="text-align: left; padding: 80px 48px 0; display: flex; flex-direction: column; position: relative;">
         <div style="max-width: 600px; z-index: 2;">
           <div class="lp-hero__eye" style="background: transparent; border: none; padding: 0; margin-bottom: 24px;">
-            DRIVE THE EXTRAORDINARY
+            PREMIUM DIGITAL ASSET
           </div>
-          <h1 class="lp-hero__domain" style="font-size: clamp(52px, 6vw, 84px); color: #fff; margin-bottom: 24px; line-height: 1.1;">Luxury<br/>Redefined.</h1>
-          <p class="lp-hero__tagline" style="font-family: var(--sans); font-style: normal; font-size: 16px; color: var(--ink-mute); max-width: 440px; margin-bottom: 36px; line-height: 1.6;">${esc(heroTagline)}</p>
+          <h1 class="lp-hero__domain" style="font-size: clamp(42px, 5vw, 72px); color: #fff; margin-bottom: 24px; line-height: 1.1;">${esc(domain)}</h1>
+          <p class="lp-hero__tagline" style="font-family: var(--serif-italic); font-style: italic; font-size: 24px; color: var(--gold); margin-bottom: 20px;">${esc(heroTagline)}</p>
+          <p style="font-family: var(--sans); font-size: 16px; color: var(--ink-mute); max-width: 520px; margin-bottom: 36px; line-height: 1.6;">${esc(heroDesc)}</p>
           
           <div class="lp-hero__cta-row" style="justify-content: flex-start; margin-bottom: 60px;">
-            <button class="btn btn--gold" style="padding: 12px 28px; font-size: 11px;">EXPLORE INVENTORY →</button>
-            <button class="btn btn--ghost" style="padding: 12px 28px; font-size: 11px; border: 1px solid rgba(255,255,255,0.2); color: #fff;">▶ WATCH VIDEO</button>
+            <button class="btn btn--gold" style="padding: 12px 28px; font-size: 11px;">SECURE THIS ASSET →</button>
+            <button class="btn btn--ghost" style="padding: 12px 28px; font-size: 11px; border: 1px solid rgba(255,255,255,0.2); color: #fff;">VIEW VALUATION</button>
           </div>
 
           <div style="display: flex; gap: 40px; margin-bottom: 40px;">
             <div>
               <div style="font-size: 10px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; display:flex; align-items:center; gap:6px;">
-                <span style="font-size:14px;">♕</span> PREMIUM BRANDS
+                <span style="font-size:14px;">✦</span> DOMAIN AUTHORITY
               </div>
-              <div style="font-family: var(--serif-display); font-size: 32px; color: #fff;">50+</div>
+              <div style="font-family: var(--serif-display); font-size: 32px; color: #fff;">DA 62</div>
             </div>
             <div>
               <div style="font-size: 10px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; display:flex; align-items:center; gap:6px;">
-                <span style="font-size:14px;">♔</span> LUXURY MODELS
+                <span style="font-size:14px;">⌛</span> ASSET AGE
               </div>
-              <div style="font-family: var(--serif-display); font-size: 32px; color: #fff;">100+</div>
+              <div style="font-family: var(--serif-display); font-size: 32px; color: #fff;">9 Yrs</div>
             </div>
             <div>
               <div style="font-size: 10px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; display:flex; align-items:center; gap:6px;">
-                <span style="font-size:14px;">웃</span> HAPPY CLIENTS
+                <span style="font-size:14px;">⟲</span> MONTHLY TRAFFIC
               </div>
-              <div style="font-family: var(--serif-display); font-size: 32px; color: #fff;">10K+</div>
+              <div style="font-family: var(--serif-display); font-size: 32px; color: #fff;">18K+</div>
             </div>
           </div>
         </div>
 
         <div class="lp-hero__img" style="margin: 0; position: absolute; right: 0; bottom: 0; width: 65%; max-width: 900px; border: none; border-radius: 0; z-index: 1; mask-image: linear-gradient(to right, transparent, black 30%); -webkit-mask-image: linear-gradient(to right, transparent, black 30%);">
-          <img src="${heroImg}" alt="Luxury Car" style="height: 100%; width: 100%; object-fit: cover; border-radius: 0;" />
+          <img src="${heroImg}" alt="${esc(domain)}" style="height: 100%; width: 100%; object-fit: cover; border-radius: 0;" />
         </div>
       </section>
 
-      <!-- Services -->
+      <!-- Value Factors (Services Design) -->
       <section class="lp-features" style="background: rgba(10,8,6,0.6); padding-top: 100px;">
         <div class="lp-features__head">
-          <div class="lp-features__eye" style="font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; font-style: normal; margin-bottom: 16px;">EXPERIENCE EXCELLENCE</div>
-          <h2 class="lp-features__title" style="color: #fff; margin-bottom: 16px;">Premium Services</h2>
-          <p style="color: var(--ink-mute); font-size: 14px; max-width: 400px; margin: 0 auto;">Every detail is crafted to deliver the ultimate luxury car ownership experience.</p>
+          <div class="lp-features__eye" style="font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; font-style: normal; margin-bottom: 16px;">THE OPPORTUNITY</div>
+          <h2 class="lp-features__title" style="color: #fff; margin-bottom: 16px;">Premium Value Factors</h2>
+          <p style="color: var(--ink-mute); font-size: 14px; max-width: 500px; margin: 0 auto;">Every attribute of this domain is positioned to deliver the ultimate foundational advantage.</p>
         </div>
         <div class="lp-features__grid" style="grid-template-columns: repeat(4, 1fr);">
-          ${services.map((s) => `
+          ${valueFactors.map((s) => `
             <div class="lp-feature" style="padding: 32px 24px; background: rgba(255,255,255,0.02);">
               <div style="font-size: 32px; color: var(--gold); margin-bottom: 20px;">✧</div>
               <h3 class="lp-feature__name" style="font-family: var(--sans); font-size: 16px; font-weight: 600; color: #fff;">${s.title}</h3>
@@ -154,35 +157,28 @@
         </div>
       </section>
 
-      <!-- Collection -->
+      <!-- Insights / Blog (Collection Design) -->
       <section class="lp-blog" style="padding-top: 80px;">
         <div class="lp-blog__head" style="align-items: flex-end; margin-bottom: 32px; border-bottom: none; padding-bottom: 0;">
           <div>
-            <div class="lp-features__eye" style="font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; font-style: normal; text-align: left; margin-bottom: 12px;">OUR COLLECTION</div>
-            <h2 style="color: #fff;">Featured Luxury Cars</h2>
+            <div class="lp-features__eye" style="font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; font-style: normal; text-align: left; margin-bottom: 12px;">ADVISORY INSIGHTS</div>
+            <h2 style="color: #fff;">Market Intelligence</h2>
           </div>
-          <span style="color: var(--gold); cursor: pointer;">VIEW ALL INVENTORY →</span>
+          <span style="color: var(--gold); cursor: pointer; font-size: 11px; letter-spacing: 0.1em; font-weight: 600;">VIEW ALL ARTICLES →</span>
         </div>
         <div class="lp-blog__grid">
-          ${cars.map((c) => `
+          ${articles.map((a) => `
             <article class="lp-article" style="background: rgba(255,255,255,0.03); border: none;">
-              <div class="lp-article__thumb" style="background-image: url('${c.img}'); height: 220px; position: relative;">
-                <div style="position: absolute; top: 16px; right: 16px; color: #fff;">♡</div>
+              <div class="lp-article__thumb" style="background-image: url('${a.img}'); height: 220px; position: relative;">
+                <div style="position: absolute; top: 16px; left: 16px; background: rgba(0,0,0,0.6); padding: 4px 8px; font-size: 9px; color: #fff; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 4px;">${a.kicker}</div>
               </div>
               <div class="lp-article__body" style="padding: 24px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                  <h3 style="font-size: 16px; font-weight: 600; color: #fff; margin: 0;">${c.name}</h3>
-                  <div style="color: var(--gold); font-family: var(--sans); font-weight: 600; font-size: 16px;">${c.price}</div>
-                </div>
-                <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-mute); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">
-                  <span>⚙ ${c.engine}</span>
-                  <span>⚡ ${c.hp}</span>
-                  <span>💺 ${c.seats}</span>
-                </div>
+                <h3 style="font-size: 18px; font-family: var(--serif-display); color: #fff; margin: 0 0 12px 0; line-height: 1.3;">${a.title}</h3>
+                <p style="font-size: 13px; color: var(--ink-mute); line-height: 1.5; margin-bottom: 20px;">${a.excerpt}</p>
                 <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;" />
                 <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; color: var(--ink-mute); letter-spacing: 0.1em; text-transform: uppercase;">
-                  <span>VIEW DETAILS</span>
-                  <span>→</span>
+                  <span>READ ARTICLE</span>
+                  <span>${a.readTime}</span>
                 </div>
               </div>
             </article>
@@ -192,11 +188,11 @@
 
       <!-- Why Choose Us -->
       <section style="padding: 100px 48px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px; background: radial-gradient(circle at center, rgba(228,188,126,0.05) 0%, transparent 60%);">
-        <h2 style="font-family: var(--serif-display); font-size: 36px; color: #fff; margin-bottom: 60px;">Why Choose ${esc(displayBrand)}?</h2>
+        <h2 style="font-family: var(--serif-display); font-size: 36px; color: #fff; margin-bottom: 60px;">Why Acquire ${esc(domain)}?</h2>
         <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto;">
           ${reasons.map((r) => `
             <div>
-              <div style="font-size: 28px; color: var(--gold); margin-bottom: 20px;">✧</div>
+              <div style="font-size: 28px; color: var(--gold); margin-bottom: 20px;">◈</div>
               <h3 style="font-size: 14px; color: #fff; font-weight: 600; margin-bottom: 12px; font-family: var(--sans);">${r.title}</h3>
               <p style="font-size: 13px; color: var(--ink-mute); line-height: 1.5;">${r.desc}</p>
             </div>
@@ -206,7 +202,7 @@
 
       <!-- Footer -->
       <footer class="lp-footer" style="background: rgba(10,8,6,1);">
-        <span><em>${esc(displayBrand)}</em> · ${esc(domain)}</span>
+        <span><em>${esc(brandName)}</em> · ${esc(domain)}</span>
         <span>© ${new Date().getFullYear()} — Premium digital asset managed by MoneyTrain</span>
       </footer>
     </section>
