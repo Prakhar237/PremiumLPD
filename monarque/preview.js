@@ -37,53 +37,43 @@
   ribbonDomain.textContent = domain;
   ribbonType.textContent = 'Marquee Domain Sales Page';
 
-  // ── Helpers & Premium Copywriting ──
+  // ── Helpers ──
   function esc(s) {
     if (s == null) return '';
     return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
   }
 
-  const defaultTagline = 'An irreplaceable digital asset. The definitive foundation for category dominance.';
-  
-  const defaultDesc1 = `In the modern digital economy, the right domain is more than just an address—it is a competitive moat. ${esc(domain)} offers immediate brand authority, inherent trust, and an unassailable market position. It is a rare opportunity to acquire a pristine, highly-brandable domain that signals absolute leadership to customers, investors, and competitors alike.`;
-  
-  const defaultDesc2 = `Owning the definitive name in your industry isn't merely an SEO advantage—it is a paradigm shift in perception. When a prospect sees this domain, credibility is established instantly. No marketing budget can simulate the trust inherently commanded by a truly premium asset. We are presenting this exclusive property to discerning buyers who understand that market dominance begins with the ultimate digital foundation.`;
+  // Fallbacks based on user image prompt
+  const fallbackHero = 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?q=80&w=2000&auto=format&fit=crop';
+  const fallbackCar1 = 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=800&auto=format&fit=crop';
+  const fallbackCar2 = 'https://images.unsplash.com/photo-1631269666993-3d077b941589?q=80&w=800&auto=format&fit=crop';
+  const fallbackCar3 = 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop';
 
-  const desc = (fields.description || '').trim();
-  const heroDesc = desc || defaultDesc1;
-  const aboutDesc = desc ? desc + ' ' + defaultDesc2 : defaultDesc2;
-
-  // Build features
-  const featureNames = [
-    'Immediate Authority', 'Defensible Moat', 'Compounding Value',
-    'Frictionless Trust', 'SEO Supremacy', 'Global Recognition'
-  ];
-  const featureDescs = [
-    'A mature digital asset with established authority and trust signals that new domains simply cannot replicate.',
-    'Strategic positioning in a high-value vertical with undeniable competitive advantages that protect your market share.',
-    'Premium domains act as digital real estate, appreciating in value while simultaneously reducing your long-term customer acquisition costs.',
-    'A memorable, commanding name that communicates professionalism and unshakeable credibility from the very first interaction.',
-    'Pre-existing search engine relationships and topical relevance that accelerate and amplify any organic growth campaign from day one.',
-    'A universal asset that transcends borders, providing a unified, elite brand presence across all international markets.'
-  ];
-
-  // ── Premium Image Fallbacks ──
-  // If user didn't upload images, use high-end luxury/architectural placeholders instead of blank gradients.
-  const fallbackHero = 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop';
-  const fallbackAbout = 'https://images.unsplash.com/photo-1541535650810-10d26f5c2ab3?q=80&w=1200&auto=format&fit=crop';
-  
   const logoImg = images.image1 ? `<img src="${images.image1}" alt="Logo" />` : `<span class="lp-nav__brand-mark">◆</span>`;
   const heroImg = images.image2 || images.image1 || fallbackHero;
-  const aboutImg = images.image3 || images.image2 || fallbackAbout;
 
-  // ── Blog / Insight articles ──
-  const articles = [
-    { kicker: 'Market Analysis', title: `Why ${esc(domain)} represents a generational acquisition opportunity.`, excerpt: 'An inside look at the metrics, the market scarcity, and the undeniable leverage of owning a category-defining name.' },
-    { kicker: 'Valuation', title: `The hidden multipliers that make premium properties like ${esc(domain)} appreciate.`, excerpt: 'Understanding the intrinsic value of digital real estate in an increasingly crowded and competitive online ecosystem.' },
-    { kicker: 'Case Study', title: `How a single premium domain generated $8.4M in attributed organic revenue.`, excerpt: 'A breakdown of the ROI timeline when a brand pivots from a compromised domain to a definitive, exact-match asset.' },
-    { kicker: 'Strategy', title: `Building an empire on a premium domain: The definitive executive playbook.`, excerpt: 'Step-by-step strategic deployment of a high-ticket domain to maximize immediate impact and long-term equity.' },
-    { kicker: 'Industry Report', title: `The flight to quality: What enterprise buyers are looking for this quarter.`, excerpt: 'Why venture capital and private equity firms are mandating premium domain acquisitions for their portfolio companies.' },
-    { kicker: 'Investment', title: `Premium domains as digital gold: Why the asset class continues to outpace equities.`, excerpt: 'Analyzing the risk-adjusted returns and capital preservation characteristics of top-tier internet properties.' },
+  // Luxora specific content
+  const heroTagline = fields.tagline || 'Discover elite performance, unmatched comfort, and timeless design. Your dream car awaits.';
+  const displayBrand = brandName === 'yourdomain' ? 'Luxora Motors' : brandName;
+
+  const services = [
+    { title: 'Premium Collection', desc: 'Handpicked luxury cars from the world\'s most prestigious brands.' },
+    { title: 'Certified Quality', desc: 'All vehicles undergo a rigorous inspection for uncompromised quality.' },
+    { title: 'Concierge Service', desc: 'Personalized assistance for a seamless and luxurious journey.' },
+    { title: 'Aftercare Support', desc: 'Reliable maintenance and support long after you drive away.' }
+  ];
+
+  const cars = [
+    { name: 'Aston Martin DB11', price: '$214,000', engine: '5.2L V12', hp: '606 HP', seats: '4 Seats', img: fallbackCar1 },
+    { name: 'Rolls-Royce Ghost', price: '$332,000', engine: '6.75L V12', hp: '563 HP', seats: '5 Seats', img: fallbackCar2 },
+    { name: 'Ferrari 812 Superfast', price: '$412,000', engine: '6.5L V12', hp: '789 HP', seats: '2 Seats', img: fallbackCar3 }
+  ];
+
+  const reasons = [
+    { title: 'Exclusive Selection', desc: 'Access the rarest and most exclusive luxury vehicles.' },
+    { title: 'Unmatched Quality', desc: 'Every car meets our highest standards of excellence.' },
+    { title: 'Client First', desc: 'Your satisfaction and privacy are our top priorities.' },
+    { title: 'Worldwide Delivery', desc: 'Delivering luxury cars to your doorstep.' }
   ];
 
   // ── Render ──
@@ -93,113 +83,130 @@
       <nav class="lp-nav">
         <div class="lp-nav__brand">
           ${logoImg}
-          <span>${esc(brandName)}</span>
+          <span>${esc(displayBrand.toUpperCase())}</span>
         </div>
         <div class="lp-nav__links">
-          <span>About</span>
-          <span>Value</span>
-          <span>Insights</span>
-          <span>Contact</span>
+          <span>HOME</span>
+          <span>INVENTORY</span>
+          <span>SERVICES</span>
+          <span>ABOUT US</span>
+          <span>CONTACT</span>
         </div>
-        <button class="lp-nav__cta">Make an Offer →</button>
+        <button class="lp-nav__cta btn--ghost" style="padding: 10px 24px; border: 1px solid var(--gold); background: transparent; color: var(--gold);">BOOK A TEST DRIVE</button>
       </nav>
 
       <!-- Hero -->
-      <section class="lp-hero">
-        <div class="lp-hero__eye">
-          <span class="lp-hero__eye-dot"></span>
-          Premium Domain · Available for Acquisition
+      <section class="lp-hero" style="text-align: left; padding: 80px 48px 0; display: flex; flex-direction: column; position: relative;">
+        <div style="max-width: 600px; z-index: 2;">
+          <div class="lp-hero__eye" style="background: transparent; border: none; padding: 0; margin-bottom: 24px;">
+            DRIVE THE EXTRAORDINARY
+          </div>
+          <h1 class="lp-hero__domain" style="font-size: clamp(52px, 6vw, 84px); color: #fff; margin-bottom: 24px; line-height: 1.1;">Luxury<br/>Redefined.</h1>
+          <p class="lp-hero__tagline" style="font-family: var(--sans); font-style: normal; font-size: 16px; color: var(--ink-mute); max-width: 440px; margin-bottom: 36px; line-height: 1.6;">${esc(heroTagline)}</p>
+          
+          <div class="lp-hero__cta-row" style="justify-content: flex-start; margin-bottom: 60px;">
+            <button class="btn btn--gold" style="padding: 12px 28px; font-size: 11px;">EXPLORE INVENTORY →</button>
+            <button class="btn btn--ghost" style="padding: 12px 28px; font-size: 11px; border: 1px solid rgba(255,255,255,0.2); color: #fff;">▶ WATCH VIDEO</button>
+          </div>
+
+          <div style="display: flex; gap: 40px; margin-bottom: 40px;">
+            <div>
+              <div style="font-size: 10px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; display:flex; align-items:center; gap:6px;">
+                <span style="font-size:14px;">♕</span> PREMIUM BRANDS
+              </div>
+              <div style="font-family: var(--serif-display); font-size: 32px; color: #fff;">50+</div>
+            </div>
+            <div>
+              <div style="font-size: 10px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; display:flex; align-items:center; gap:6px;">
+                <span style="font-size:14px;">♔</span> LUXURY MODELS
+              </div>
+              <div style="font-family: var(--serif-display); font-size: 32px; color: #fff;">100+</div>
+            </div>
+            <div>
+              <div style="font-size: 10px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; display:flex; align-items:center; gap:6px;">
+                <span style="font-size:14px;">웃</span> HAPPY CLIENTS
+              </div>
+              <div style="font-family: var(--serif-display); font-size: 32px; color: #fff;">10K+</div>
+            </div>
+          </div>
         </div>
-        <h1 class="lp-hero__domain">${esc(domain)}</h1>
-        <p class="lp-hero__tagline">${esc(fields.tagline || defaultTagline)}</p>
-        <p class="lp-hero__desc">${esc(heroDesc)}</p>
-        <div class="lp-hero__cta-row">
-          <button class="btn btn--gold btn--xl">Make an Offer →</button>
-          <button class="btn btn--ghost btn--xl">View Valuation ↓</button>
-        </div>
-        <div class="lp-hero__img">
-          <img src="${heroImg}" alt="${esc(domain)} overview" />
+
+        <div class="lp-hero__img" style="margin: 0; position: absolute; right: 0; bottom: 0; width: 65%; max-width: 900px; border: none; border-radius: 0; z-index: 1; mask-image: linear-gradient(to right, transparent, black 30%); -webkit-mask-image: linear-gradient(to right, transparent, black 30%);">
+          <img src="${heroImg}" alt="Luxury Car" style="height: 100%; width: 100%; object-fit: cover; border-radius: 0;" />
         </div>
       </section>
 
-      <!-- Stats -->
-      <section class="lp-stats">
-        <div class="lp-stats__item"><div class="lp-stats__num">Top 1%</div><div class="lp-stats__lbl">Brandability Score</div></div>
-        <div class="lp-stats__item"><div class="lp-stats__num">9 yrs</div><div class="lp-stats__lbl">Asset Age</div></div>
-        <div class="lp-stats__item"><div class="lp-stats__num">Exclusive</div><div class="lp-stats__lbl">Market Position</div></div>
-        <div class="lp-stats__item"><div class="lp-stats__num">Global</div><div class="lp-stats__lbl">Reach Potential</div></div>
-      </section>
-
-      <!-- About / Value -->
-      <section class="lp-about">
-        <div>
-          <div class="lp-about__eye">— The Opportunity</div>
-          <h2 class="lp-about__title">Absolute authority.<br/><em>An unfair advantage.</em></h2>
-          <p class="lp-about__text" style="font-size: 18px; color: var(--ink);">${esc(heroDesc)}</p>
-          <br/>
-          <p class="lp-about__text">${esc(aboutDesc)}</p>
-        </div>
-        <div class="lp-about__img">
-          <img src="${aboutImg}" alt="Value of ${esc(domain)}" />
-        </div>
-      </section>
-
-      <!-- Features -->
-      <section class="lp-features">
+      <!-- Services -->
+      <section class="lp-features" style="background: rgba(10,8,6,0.6); padding-top: 100px;">
         <div class="lp-features__head">
-          <div class="lp-features__eye">— Value Factors</div>
-          <h2 class="lp-features__title">What makes this asset <em>invaluable.</em></h2>
+          <div class="lp-features__eye" style="font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; font-style: normal; margin-bottom: 16px;">EXPERIENCE EXCELLENCE</div>
+          <h2 class="lp-features__title" style="color: #fff; margin-bottom: 16px;">Premium Services</h2>
+          <p style="color: var(--ink-mute); font-size: 14px; max-width: 400px; margin: 0 auto;">Every detail is crafted to deliver the ultimate luxury car ownership experience.</p>
         </div>
-        <div class="lp-features__grid">
-          ${featureNames.map((f, i) => `
-            <div class="lp-feature">
-              <div class="lp-feature__num">${String(i + 1).padStart(2, '0')}</div>
-              <h3 class="lp-feature__name">${f}</h3>
-              <p class="lp-feature__desc">${featureDescs[i]}</p>
+        <div class="lp-features__grid" style="grid-template-columns: repeat(4, 1fr);">
+          ${services.map((s) => `
+            <div class="lp-feature" style="padding: 32px 24px; background: rgba(255,255,255,0.02);">
+              <div style="font-size: 32px; color: var(--gold); margin-bottom: 20px;">✧</div>
+              <h3 class="lp-feature__name" style="font-family: var(--sans); font-size: 16px; font-weight: 600; color: #fff;">${s.title}</h3>
+              <p class="lp-feature__desc">${s.desc}</p>
             </div>
           `).join('')}
         </div>
       </section>
 
-      <!-- Testimonial -->
-      <section class="lp-testimonial">
-        <div class="lp-testimonial__mark">"</div>
-        <blockquote class="lp-testimonial__quote">
-          Premium domains are the quiet infrastructure of category leadership. The brands that own them don't talk about the advantage — they simply compound it, year after year.
-        </blockquote>
-        <div class="lp-testimonial__by">— MoneyTrainDomains Advisory</div>
-      </section>
-
-      <!-- CTA -->
-      <section class="lp-cta">
-        <h2 class="lp-cta__title">Ready to secure <em>${esc(domain)}?</em></h2>
-        <p class="lp-cta__sub">We facilitate seamless, secure transfers for high-value digital assets. Serious inquiries only. We respond within one business day with full valuation details and acquisition terms.</p>
-        <button class="btn btn--gold btn--xl">Submit Inquiry →</button>
-      </section>
-
-      <!-- Blog / SEO articles -->
-      <section class="lp-blog">
-        <div class="lp-blog__head">
-          <h2>Insights & <em>Intelligence</em></h2>
-          <span>From the advisory desk</span>
+      <!-- Collection -->
+      <section class="lp-blog" style="padding-top: 80px;">
+        <div class="lp-blog__head" style="align-items: flex-end; margin-bottom: 32px; border-bottom: none; padding-bottom: 0;">
+          <div>
+            <div class="lp-features__eye" style="font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; font-style: normal; text-align: left; margin-bottom: 12px;">OUR COLLECTION</div>
+            <h2 style="color: #fff;">Featured Luxury Cars</h2>
+          </div>
+          <span style="color: var(--gold); cursor: pointer;">VIEW ALL INVENTORY →</span>
         </div>
         <div class="lp-blog__grid">
-          ${articles.map((a, i) => `
-            <article class="lp-article">
-              <div class="lp-article__thumb lp-article__thumb--${(i % 6) + 1}"></div>
-              <div class="lp-article__body">
-                <div class="lp-article__kicker">${esc(a.kicker)} · ${3 + (i * 2)} min read</div>
-                <h3 class="lp-article__title">${esc(a.title)}</h3>
-                <p class="lp-article__excerpt">${esc(a.excerpt)}</p>
+          ${cars.map((c) => `
+            <article class="lp-article" style="background: rgba(255,255,255,0.03); border: none;">
+              <div class="lp-article__thumb" style="background-image: url('${c.img}'); height: 220px; position: relative;">
+                <div style="position: absolute; top: 16px; right: 16px; color: #fff;">♡</div>
+              </div>
+              <div class="lp-article__body" style="padding: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                  <h3 style="font-size: 16px; font-weight: 600; color: #fff; margin: 0;">${c.name}</h3>
+                  <div style="color: var(--gold); font-family: var(--sans); font-weight: 600; font-size: 16px;">${c.price}</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-mute); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">
+                  <span>⚙ ${c.engine}</span>
+                  <span>⚡ ${c.hp}</span>
+                  <span>💺 ${c.seats}</span>
+                </div>
+                <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;" />
+                <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; color: var(--ink-mute); letter-spacing: 0.1em; text-transform: uppercase;">
+                  <span>VIEW DETAILS</span>
+                  <span>→</span>
+                </div>
               </div>
             </article>
           `).join('')}
         </div>
       </section>
 
+      <!-- Why Choose Us -->
+      <section style="padding: 100px 48px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px; background: radial-gradient(circle at center, rgba(228,188,126,0.05) 0%, transparent 60%);">
+        <h2 style="font-family: var(--serif-display); font-size: 36px; color: #fff; margin-bottom: 60px;">Why Choose ${esc(displayBrand)}?</h2>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto;">
+          ${reasons.map((r) => `
+            <div>
+              <div style="font-size: 28px; color: var(--gold); margin-bottom: 20px;">✧</div>
+              <h3 style="font-size: 14px; color: #fff; font-weight: 600; margin-bottom: 12px; font-family: var(--sans);">${r.title}</h3>
+              <p style="font-size: 13px; color: var(--ink-mute); line-height: 1.5;">${r.desc}</p>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+
       <!-- Footer -->
-      <footer class="lp-footer">
-        <span><em>${esc(brandName)}</em> · ${esc(domain)}</span>
+      <footer class="lp-footer" style="background: rgba(10,8,6,1);">
+        <span><em>${esc(displayBrand)}</em> · ${esc(domain)}</span>
         <span>© ${new Date().getFullYear()} — Premium digital asset managed by MoneyTrain</span>
       </footer>
     </section>
