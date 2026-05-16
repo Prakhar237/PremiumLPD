@@ -37,53 +37,53 @@
   ribbonDomain.textContent = domain;
   ribbonType.textContent = 'Marquee Domain Sales Page';
 
-  // ── Helpers ──
-  const LOREM = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-    'Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-    'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
-    'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur.',
-  ];
-  function lorem(n) { return LOREM.slice(0, n || 2).join(' '); }
+  // ── Helpers & Premium Copywriting ──
   function esc(s) {
     if (s == null) return '';
     return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
   }
 
-  const desc = (fields.description || '').trim();
-  const fullDesc = desc.length > 80 ? desc : (desc ? desc + ' ' + lorem(2) : lorem(3));
+  const defaultTagline = 'An irreplaceable digital asset. The definitive foundation for category dominance.';
+  
+  const defaultDesc1 = `In the modern digital economy, the right domain is more than just an address—it is a competitive moat. ${esc(domain)} offers immediate brand authority, inherent trust, and an unassailable market position. It is a rare opportunity to acquire a pristine, highly-brandable domain that signals absolute leadership to customers, investors, and competitors alike.`;
+  
+  const defaultDesc2 = `Owning the definitive name in your industry isn't merely an SEO advantage—it is a paradigm shift in perception. When a prospect sees this domain, credibility is established instantly. No marketing budget can simulate the trust inherently commanded by a truly premium asset. We are presenting this exclusive property to discerning buyers who understand that market dominance begins with the ultimate digital foundation.`;
 
-  // Build features from description
+  const desc = (fields.description || '').trim();
+  const heroDesc = desc || defaultDesc1;
+  const aboutDesc = desc ? desc + ' ' + defaultDesc2 : defaultDesc2;
+
+  // Build features
   const featureNames = [
-    'Premium Digital Presence', 'Authority & Trust', 'Revenue Potential',
-    'Brand Recognition', 'SEO Foundation', 'Market Position'
+    'Immediate Authority', 'Defensible Moat', 'Compounding Value',
+    'Frictionless Trust', 'SEO Supremacy', 'Global Recognition'
   ];
   const featureDescs = [
-    'A mature digital asset with established authority, aged trust signals, and organic search equity that new domains simply cannot replicate.',
-    'Years of indexing history, natural backlink profiles, and domain authority that search engines reward with preferential ranking treatment.',
-    'Immediate monetisation pathways through organic traffic, affiliate placement, lead generation, and direct brand value appreciation.',
-    'A memorable, brandable name that communicates professionalism and credibility from the very first interaction with your audience.',
-    'Pre-existing search engine relationships, crawl history, and topical relevance that accelerate any SEO campaign from day one.',
-    'Strategic positioning in a high-value vertical with defensible competitive advantages that compound over time.'
+    'A mature digital asset with established authority and trust signals that new domains simply cannot replicate.',
+    'Strategic positioning in a high-value vertical with undeniable competitive advantages that protect your market share.',
+    'Premium domains act as digital real estate, appreciating in value while simultaneously reducing your long-term customer acquisition costs.',
+    'A memorable, commanding name that communicates professionalism and unshakeable credibility from the very first interaction.',
+    'Pre-existing search engine relationships and topical relevance that accelerate and amplify any organic growth campaign from day one.',
+    'A universal asset that transcends borders, providing a unified, elite brand presence across all international markets.'
   ];
 
-  // ── Logo image ──
+  // ── Premium Image Fallbacks ──
+  // If user didn't upload images, use high-end luxury/architectural placeholders instead of blank gradients.
+  const fallbackHero = 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop';
+  const fallbackAbout = 'https://images.unsplash.com/photo-1541535650810-10d26f5c2ab3?q=80&w=1200&auto=format&fit=crop';
+  
   const logoImg = images.image1 ? `<img src="${images.image1}" alt="Logo" />` : `<span class="lp-nav__brand-mark">◆</span>`;
-  const heroImg = images.image2 || images.image1 || '';
-  const aboutImg = images.image3 || images.image2 || '';
+  const heroImg = images.image2 || images.image1 || fallbackHero;
+  const aboutImg = images.image3 || images.image2 || fallbackAbout;
 
-  // ── Blog articles ──
+  // ── Blog / Insight articles ──
   const articles = [
-    { kicker: 'Market Analysis', title: `Why ${esc(domain)} represents a rare acquisition opportunity in ${new Date().getFullYear()}.`, excerpt: lorem(1) },
-    { kicker: 'Valuation', title: `The hidden value factors that make premium domains like ${esc(domain)} appreciate.`, excerpt: lorem(1) },
-    { kicker: 'Case Study', title: `How a single premium domain generated $2.4M in attributed revenue.`, excerpt: lorem(1) },
-    { kicker: 'Strategy', title: `Building a category-defining brand on a premium domain: a playbook.`, excerpt: lorem(1) },
-    { kicker: 'Industry Report', title: `Domain aftermarket trends: what serious buyers are looking for in ${new Date().getFullYear()}.`, excerpt: lorem(1) },
-    { kicker: 'Investment', title: `Premium domains as digital real estate: why the asset class is compounding.`, excerpt: lorem(1) },
+    { kicker: 'Market Analysis', title: `Why ${esc(domain)} represents a generational acquisition opportunity.`, excerpt: 'An inside look at the metrics, the market scarcity, and the undeniable leverage of owning a category-defining name.' },
+    { kicker: 'Valuation', title: `The hidden multipliers that make premium properties like ${esc(domain)} appreciate.`, excerpt: 'Understanding the intrinsic value of digital real estate in an increasingly crowded and competitive online ecosystem.' },
+    { kicker: 'Case Study', title: `How a single premium domain generated $8.4M in attributed organic revenue.`, excerpt: 'A breakdown of the ROI timeline when a brand pivots from a compromised domain to a definitive, exact-match asset.' },
+    { kicker: 'Strategy', title: `Building an empire on a premium domain: The definitive executive playbook.`, excerpt: 'Step-by-step strategic deployment of a high-ticket domain to maximize immediate impact and long-term equity.' },
+    { kicker: 'Industry Report', title: `The flight to quality: What enterprise buyers are looking for this quarter.`, excerpt: 'Why venture capital and private equity firms are mandating premium domain acquisitions for their portfolio companies.' },
+    { kicker: 'Investment', title: `Premium domains as digital gold: Why the asset class continues to outpace equities.`, excerpt: 'Analyzing the risk-adjusted returns and capital preservation characteristics of top-tier internet properties.' },
   ];
 
   // ── Render ──
@@ -111,49 +111,44 @@
           Premium Domain · Available for Acquisition
         </div>
         <h1 class="lp-hero__domain">${esc(domain)}</h1>
-        <p class="lp-hero__tagline">${esc(fields.tagline || 'A premium digital asset, positioned for its next chapter.')}</p>
-        <p class="lp-hero__desc">${esc(fullDesc)}</p>
+        <p class="lp-hero__tagline">${esc(fields.tagline || defaultTagline)}</p>
+        <p class="lp-hero__desc">${esc(heroDesc)}</p>
         <div class="lp-hero__cta-row">
           <button class="btn btn--gold btn--xl">Make an Offer →</button>
           <button class="btn btn--ghost btn--xl">View Valuation ↓</button>
         </div>
-        ${heroImg ? `
         <div class="lp-hero__img">
-          <img src="${heroImg}" alt="${esc(domain)} preview" />
-        </div>` : ''}
+          <img src="${heroImg}" alt="${esc(domain)} overview" />
+        </div>
       </section>
 
       <!-- Stats -->
       <section class="lp-stats">
-        <div class="lp-stats__item"><div class="lp-stats__num">DA 62</div><div class="lp-stats__lbl">Domain Authority</div></div>
-        <div class="lp-stats__item"><div class="lp-stats__num">9 yrs</div><div class="lp-stats__lbl">Domain Age</div></div>
-        <div class="lp-stats__item"><div class="lp-stats__num">2.1k</div><div class="lp-stats__lbl">Referring Domains</div></div>
-        <div class="lp-stats__item"><div class="lp-stats__num">18k</div><div class="lp-stats__lbl">Monthly Traffic</div></div>
+        <div class="lp-stats__item"><div class="lp-stats__num">Top 1%</div><div class="lp-stats__lbl">Brandability Score</div></div>
+        <div class="lp-stats__item"><div class="lp-stats__num">9 yrs</div><div class="lp-stats__lbl">Asset Age</div></div>
+        <div class="lp-stats__item"><div class="lp-stats__num">Exclusive</div><div class="lp-stats__lbl">Market Position</div></div>
+        <div class="lp-stats__item"><div class="lp-stats__num">Global</div><div class="lp-stats__lbl">Reach Potential</div></div>
       </section>
 
       <!-- About / Value -->
       <section class="lp-about">
         <div>
           <div class="lp-about__eye">— The Opportunity</div>
-          <h2 class="lp-about__title">A premium name.<br/><em>An unfair advantage.</em></h2>
-          <p class="lp-about__text">${esc(fullDesc)}</p>
+          <h2 class="lp-about__title">Absolute authority.<br/><em>An unfair advantage.</em></h2>
+          <p class="lp-about__text" style="font-size: 18px; color: var(--ink);">${esc(heroDesc)}</p>
           <br/>
-          <p class="lp-about__text">${esc(lorem(2))}</p>
+          <p class="lp-about__text">${esc(aboutDesc)}</p>
         </div>
-        ${aboutImg ? `
         <div class="lp-about__img">
-          <img src="${aboutImg}" alt="About ${esc(domain)}" />
-        </div>` : `
-        <div class="lp-about__img" style="background: linear-gradient(135deg, rgba(228,188,126,0.08) 0%, rgba(10,8,6,1) 100%); display:flex; align-items:center; justify-content:center;">
-          <span style="font-family:var(--serif-display);font-size:64px;color:var(--gold);opacity:0.3;">◆</span>
-        </div>`}
+          <img src="${aboutImg}" alt="Value of ${esc(domain)}" />
+        </div>
       </section>
 
       <!-- Features -->
       <section class="lp-features">
         <div class="lp-features__head">
           <div class="lp-features__eye">— Value Factors</div>
-          <h2 class="lp-features__title">What makes this domain <em>worth it.</em></h2>
+          <h2 class="lp-features__title">What makes this asset <em>invaluable.</em></h2>
         </div>
         <div class="lp-features__grid">
           ${featureNames.map((f, i) => `
@@ -170,23 +165,23 @@
       <section class="lp-testimonial">
         <div class="lp-testimonial__mark">"</div>
         <blockquote class="lp-testimonial__quote">
-          Premium domains are the quiet infrastructure of category leadership. The brands that own them don't talk about it — they just compound.
+          Premium domains are the quiet infrastructure of category leadership. The brands that own them don't talk about the advantage — they simply compound it, year after year.
         </blockquote>
         <div class="lp-testimonial__by">— MoneyTrainDomains Advisory</div>
       </section>
 
       <!-- CTA -->
       <section class="lp-cta">
-        <h2 class="lp-cta__title">Ready to own <em>${esc(domain)}?</em></h2>
-        <p class="lp-cta__sub">Serious inquiries only. We respond within one business day with full valuation details and acquisition terms.</p>
-        <button class="btn btn--gold btn--xl">Make an Offer →</button>
+        <h2 class="lp-cta__title">Ready to secure <em>${esc(domain)}?</em></h2>
+        <p class="lp-cta__sub">We facilitate seamless, secure transfers for high-value digital assets. Serious inquiries only. We respond within one business day with full valuation details and acquisition terms.</p>
+        <button class="btn btn--gold btn--xl">Submit Inquiry →</button>
       </section>
 
       <!-- Blog / SEO articles -->
       <section class="lp-blog">
         <div class="lp-blog__head">
-          <h2>Insights & <em>Articles</em></h2>
-          <span>From the journal</span>
+          <h2>Insights & <em>Intelligence</em></h2>
+          <span>From the advisory desk</span>
         </div>
         <div class="lp-blog__grid">
           ${articles.map((a, i) => `
@@ -205,7 +200,7 @@
       <!-- Footer -->
       <footer class="lp-footer">
         <span><em>${esc(brandName)}</em> · ${esc(domain)}</span>
-        <span>© ${new Date().getFullYear()} — Preview built with MoneyTrainDomains</span>
+        <span>© ${new Date().getFullYear()} — Premium digital asset managed by MoneyTrain</span>
       </footer>
     </section>
   `;
