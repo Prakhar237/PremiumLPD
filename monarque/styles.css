@@ -985,6 +985,7 @@ em {
   color: var(--ink-dim);
   margin-bottom: 20px;
   text-transform: uppercase;
+  padding-right: 110px;
 }
 .service-card__title {
   font-family: var(--serif-display);
