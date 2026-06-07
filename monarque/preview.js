@@ -35,7 +35,7 @@
 
   document.title = `${domain} · Marquee Domain Preview`;
   ribbonDomain.textContent = domain;
-  ribbonType.textContent = 'Marquee Domain Sales Page';
+  ribbonType.textContent = 'Premium Domain Service Preview';
 
   // ── Helpers ──
   function esc(s) {
@@ -80,16 +80,16 @@
   ];
 
   const articles = [
-    { kicker: 'Market Analysis', title: `Why ${esc(domain)} is a generational acquisition.`,            excerpt: 'Category-defining domains are scarce by nature. Once acquired, they permanently close off one of the most powerful competitive vectors available online.', img: fallbackArticle1, readTime: '5 min read' },
-    { kicker: 'Valuation',       title: `The hidden multipliers driving premium domain values.`,         excerpt: 'Exact-match authority, topical relevance, and an aged backlink profile combine to create an asset whose value compounds — not depreciates — over time.',  img: fallbackArticle2, readTime: '4 min read' },
-    { kicker: 'Case Study',      title: `How an exact-match domain generated $8.4M in organic revenue.`,excerpt: 'When a growth-stage brand pivoted to a premium exact-match domain, organic traffic tripled within 12 months and customer acquisition costs fell by 40%.',  img: fallbackArticle3, readTime: '3 min read' }
+    { kicker: 'Growth Strategy', title: `Why launching on ${esc(domain)} is a generational advantage.`, excerpt: 'Category-defining domains are scarce by nature. Building your service here permanently closes off one of the most powerful competitive vectors.', img: fallbackArticle1, readTime: '5 min read' },
+    { kicker: 'Performance Metrics', title: `The hidden multipliers driving premium site performance.`,    excerpt: 'Exact-match authority, topical relevance, and aged backlink profiles combine to accelerate traffic acquisition and growth.',  img: fallbackArticle2, readTime: '4 min read' },
+    { kicker: 'Case Study',      title: `How exact-match deployment generated $8.4M in organic revenue.`,excerpt: 'When a growth-stage brand pivoted to a premium exact-match domain, customer acquisition costs fell by 40% within 12 months.',  img: fallbackArticle3, readTime: '3 min read' }
   ];
 
   const reasons = [
-    { icon: iconKey,     title: 'Exclusive Positioning', desc: 'Access the rarest and most exclusive digital real estate in your vertical.' },
-    { icon: iconShield,  title: 'Unmatched Credibility',  desc: 'Every prospect interaction begins with ultimate, unshakeable trust.' },
-    { icon: iconDiamond, title: 'Client Confidentiality', desc: 'We facilitate secure, anonymous transfers for high-value assets.' },
-    { icon: iconGlobe,   title: 'Global Reach',           desc: 'A universal asset that transcends borders and regional limitations.' }
+    { icon: iconKey,     title: 'Exclusive Authority',   desc: 'Establish your brand on the most prestigious digital address in your industry.' },
+    { icon: iconShield,  title: 'Instant Credibility',   desc: 'Every prospect interaction begins with ultimate, unshakeable trust.' },
+    { icon: iconDiamond, title: 'Seamless Integration',  desc: 'Our turn-key platform handles custom setup, hosting, and performance optimization.' },
+    { icon: iconGlobe,   title: 'Global Search power',   desc: 'Enjoy inherent SEO advantages that amplify your content search rankings globally.' }
   ];
 
   // ── Blog article body ──
@@ -103,19 +103,19 @@
     <header class="lp-post__header">
       <div class="lp-post__kicker">Editorial · Market Intelligence</div>
       <h1 class="lp-post__title">
-        ${esc(domain)}: The Case for Acquiring a<br/>
-        <em>Category-Defining Digital Asset</em>
+        ${esc(domain)}: How to Leverage a<br/>
+        <em>Category-Defining Domain for Your Service</em>
       </h1>
       <p class="lp-post__deck">
         A premium domain is the most defensible moat in the modern internet economy.
-        Here is why ${esc(domain)} represents a rare and irreplaceable opportunity — and what it means for the buyer who moves first.
+        Here is how to unlock the potential of ${esc(domain)} and what it means for your brand's growth.
       </p>
       <div class="lp-post__meta">
         <div class="lp-post__author">
           <div class="lp-post__author-avatar">M</div>
           <div>
             <div class="lp-post__author-name">MoneyTrain Editorial</div>
-            <div class="lp-post__author-role">Domain Acquisition Advisory</div>
+            <div class="lp-post__author-role">Domain Hosting Advisory</div>
           </div>
         </div>
         <div class="lp-post__meta-right">
@@ -123,7 +123,7 @@
           <span class="lp-post__sep">·</span>
           <span>6 min read</span>
           <span class="lp-post__sep">·</span>
-          <span style="color:var(--gold);">Premium Analysis</span>
+          <span>Development Guide</span>
         </div>
       </div>
     </header>
@@ -132,7 +132,7 @@
     <div class="lp-post__cover">
       <img src="${fallbackBlogInline}" alt="Domain market analysis" />
       <div class="lp-post__cover-caption">
-        Premium digital real estate commands a significant price premium in today's market — and continues to appreciate as online competition intensifies.
+        Premium digital real estate commands a significant authority premium in today's market — and continues to accelerate launch speeds as online competition intensifies.
       </div>
     </div>
 
@@ -185,7 +185,7 @@
 
       <!-- Second pull quote -->
       <blockquote class="lp-post__pullquote">
-        "In every domain transaction we've facilitated, the buyer who moved quickest was the one who understood they weren't buying a web address — they were buying a category."
+        "Developing a premium domain isn't just about launching a website — it's about claiming leadership in your category."
         <cite>— Senior Acquisition Advisor, MoneyTrainDomains</cite>
       </blockquote>
 
@@ -197,10 +197,10 @@
 
       <div class="lp-post__cta-inline">
         <div class="lp-post__cta-inline-text">
-          <div class="lp-post__cta-inline-eye">Ready to acquire?</div>
-          <div class="lp-post__cta-inline-title">Secure <em>${esc(domain)}</em> before it's gone.</div>
+          <div class="lp-post__cta-inline-eye">Ready to build?</div>
+          <div class="lp-post__cta-inline-title">Launch on <em>${esc(domain)}</em> today.</div>
         </div>
-        <button class="btn btn--gold" style="padding:14px 32px; font-size:11px; white-space:nowrap;" onclick="window.location.href='index.html#contact'">Make an Offer →</button>
+        <button class="btn btn--gold" style="padding:14px 32px; font-size:11px; white-space:nowrap;" onclick="window.location.href='index.html#contact'">Launch Your Site →</button>
       </div>
 
     </div><!-- /.lp-post__body -->
@@ -218,11 +218,11 @@
         </div>
         <div class="lp-nav__links">
           <span>OVERVIEW</span>
-          <span>VALUATION</span>
+          <span>FEATURES</span>
           <span>INSIGHTS</span>
-          <span>ADVISORY</span>
+          <span>HOSTING</span>
         </div>
-        <button class="lp-nav__cta btn--ghost" style="padding: 10px 24px; border: 1px solid var(--gold); background: transparent; color: var(--gold);">MAKE AN OFFER</button>
+        <button class="lp-nav__cta btn--ghost" style="padding: 10px 24px; border: 1px solid var(--gold); background: transparent; color: var(--gold);">HOST WEBSITE NOW</button>
       </nav>
 
       <!-- Hero -->
@@ -236,8 +236,8 @@
           <p style="font-family: var(--sans); font-size: 18px; color: var(--ink-mute); max-width: 560px; margin-bottom: 48px; line-height: 1.6;">${esc(heroDesc)}</p>
 
           <div class="lp-hero__cta-row" style="justify-content: flex-start; margin-bottom: 80px;">
-            <button class="btn btn--gold" style="padding: 16px 36px; font-size: 12px;">SECURE THIS ASSET →</button>
-            <button class="btn btn--ghost" style="padding: 16px 36px; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); color: #fff;">VIEW VALUATION</button>
+            <button class="btn btn--gold" style="padding: 16px 36px; font-size: 12px;">LAUNCH YOUR SITE →</button>
+            <button class="btn btn--ghost" style="padding: 16px 36px; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); color: #fff;">EXPLORE FEATURES</button>
           </div>
 
           <div style="display: flex; gap: 48px;">
@@ -270,16 +270,16 @@
       <!-- ===== LONG-FORM BLOG ARTICLE ===== -->
       ${blogHTML}
 
-      <!-- Value Factors (cards — unchanged) -->
-      <section class="lp-features" style="background: rgba(10,8,6,0.6); padding: 120px 48px;">
-        <div class="lp-features__head" style="max-width: 1200px; margin: 0 auto 60px;">
+      <!-- Value Factors (cards — left aligned) -->
+      <section class="lp-features" style="background: rgba(10,8,6,0.6); padding: 120px 48px; text-align: left;">
+        <div class="lp-features__head" style="max-width: 1200px; margin: 0 0 60px 0; text-align: left;">
           <div class="lp-features__eye" style="font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; font-style: normal; margin-bottom: 16px;">THE OPPORTUNITY</div>
           <h2 class="lp-features__title" style="color: #fff; margin-bottom: 16px;">Premium Value Factors</h2>
-          <p style="color: var(--ink-mute); font-size: 16px; max-width: 600px; margin: 0 auto;">Every attribute of this domain is positioned to deliver the ultimate foundational advantage for your business.</p>
+          <p style="color: var(--ink-mute); font-size: 16px; max-width: 600px; margin: 0;">Every attribute of this domain is positioned to deliver the ultimate foundational advantage for your business.</p>
         </div>
-        <div class="lp-features__grid" style="grid-template-columns: repeat(4, 1fr); max-width: 1200px; margin: 0 auto;">
+        <div class="lp-features__grid" style="grid-template-columns: repeat(4, 1fr); max-width: 1200px; margin: 0;">
           ${valueFactors.map((s) => `
-            <div class="lp-feature" style="padding: 40px 32px; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+            <div class="lp-feature" style="padding: 40px 32px; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: left;">
               <div style="margin-bottom: 24px; color: var(--gold);">${s.icon}</div>
               <h3 class="lp-feature__name" style="font-family: var(--sans); font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 16px;">${s.title}</h3>
               <p class="lp-feature__desc" style="font-size: 14px; line-height: 1.6; color: var(--ink-mute);">${s.desc}</p>
@@ -288,24 +288,24 @@
         </div>
       </section>
 
-      <!-- Insights / Blog grid (unchanged) -->
-      <section class="lp-blog" style="padding: 120px 48px; max-width: 1300px; margin: 0 auto;">
-        <div class="lp-blog__head" style="align-items: flex-end; margin-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 24px;">
+      <!-- Insights / Blog grid (left aligned) -->
+      <section class="lp-blog" style="padding: 120px 48px; max-width: 1300px; margin: 0; text-align: left;">
+        <div class="lp-blog__head" style="align-items: flex-end; margin-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 24px; text-align: left;">
           <div>
             <div class="lp-features__eye" style="font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; font-style: normal; text-align: left; margin-bottom: 12px;">ADVISORY INSIGHTS</div>
-            <h2 style="color: #fff; font-size: 40px; font-family: var(--serif-display);">Market Intelligence</h2>
+            <h2 style="color: #fff; font-size: 40px; font-family: var(--serif-display); text-align: left;">Market Intelligence</h2>
           </div>
           <span style="color: var(--gold); cursor: pointer; font-size: 12px; letter-spacing: 0.1em; font-weight: 600;">VIEW ALL ARTICLES →</span>
         </div>
-        <div class="lp-blog__grid">
+        <div class="lp-blog__grid" style="margin: 0;">
           ${articles.map((a) => `
-            <article class="lp-article" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px;">
+            <article class="lp-article" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; text-align: left;">
               <div class="lp-article__thumb" style="background-image: url('${a.img}'); height: 260px; position: relative;">
                 <div style="position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 6px 12px; font-size: 10px; color: #fff; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 4px;">${a.kicker}</div>
               </div>
-              <div class="lp-article__body" style="padding: 32px;">
-                <h3 style="font-size: 22px; font-family: var(--serif-display); color: #fff; margin: 0 0 16px 0; line-height: 1.4;">${a.title}</h3>
-                <p style="font-size: 14px; color: var(--ink-mute); line-height: 1.6; margin-bottom: 24px;">${a.excerpt}</p>
+              <div class="lp-article__body" style="padding: 32px; text-align: left;">
+                <h3 style="font-size: 22px; font-family: var(--serif-display); color: #fff; margin: 0 0 16px 0; line-height: 1.4; text-align: left;">${a.title}</h3>
+                <p style="font-size: 14px; color: var(--ink-mute); line-height: 1.6; margin-bottom: 24px; text-align: left;">${a.excerpt}</p>
                 <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 24px 0;" />
                 <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: var(--ink-mute); letter-spacing: 0.1em; text-transform: uppercase;">
                   <span style="color: var(--gold);">READ ARTICLE</span>
@@ -317,15 +317,15 @@
         </div>
       </section>
 
-      <!-- Why Choose Us -->
-      <section style="padding: 120px 48px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px; background: radial-gradient(circle at center, rgba(228,188,126,0.05) 0%, transparent 60%);">
-        <h2 style="font-family: var(--serif-display); font-size: 42px; color: #fff; margin-bottom: 80px;">Why Acquire ${esc(domain)}?</h2>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px; max-width: 1200px; margin: 0 auto;">
+      <!-- Why Choose Us (left aligned) -->
+      <section style="padding: 120px 48px; text-align: left; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px; background: radial-gradient(circle at bottom left, rgba(228,188,126,0.05) 0%, transparent 60%);">
+        <h2 style="font-family: var(--serif-display); font-size: 42px; color: #fff; margin-bottom: 80px; text-align: left;">Why Build Your Service on ${esc(domain)}?</h2>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px; max-width: 1200px; margin: 0;">
           ${reasons.map((r) => `
-            <div>
+            <div style="text-align: left;">
               <div style="margin-bottom: 24px; display: inline-block;">${r.icon}</div>
-              <h3 style="font-size: 16px; color: #fff; font-weight: 600; margin-bottom: 16px; font-family: var(--sans);">${r.title}</h3>
-              <p style="font-size: 14px; color: var(--ink-mute); line-height: 1.6;">${r.desc}</p>
+              <h3 style="font-size: 16px; color: #fff; font-weight: 600; margin-bottom: 16px; font-family: var(--sans); text-align: left;">${r.title}</h3>
+              <p style="font-size: 14px; color: var(--ink-mute); line-height: 1.6; text-align: left;">${r.desc}</p>
             </div>
           `).join('')}
         </div>
@@ -334,7 +334,7 @@
       <!-- Footer -->
       <footer class="lp-footer" style="background: rgba(10,8,6,1);">
         <span><em>${esc(brandName)}</em> · ${esc(domain)}</span>
-        <span>© ${new Date().getFullYear()} — Premium digital asset managed by MoneyTrain</span>
+        <span>© ${new Date().getFullYear()} — Premium website hosted by MoneyTrain</span>
       </footer>
     </section>
   `;
