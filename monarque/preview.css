@@ -8,6 +8,12 @@
   cursor: auto;
 }
 .preview-body .cursor { display: none; }
+/* Force normal pointer cursor on all interactive elements in preview */
+.preview-body button,
+.preview-body a,
+.preview-body .btn {
+  cursor: pointer !important;
+}
 
 /* ── Ribbon ── */
 .preview-ribbon {
@@ -622,6 +628,47 @@
 /* Divider between article and cards */
 .lp-post + section {
   border-top: 1px solid var(--line);
+}
+
+/* ==========================================================
+   PREVIEW ALIGNMENT OVERRIDES — all bottom sections left
+========================================================== */
+.lp .lp-features {
+  text-align: left;
+}
+.lp .lp-features__head {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+.lp .lp-features__eye {
+  text-align: left;
+}
+.lp .lp-features__title {
+  text-align: left;
+}
+.lp .lp-features__title + p {
+  margin-left: 0;
+  margin-right: 0;
+}
+.lp .lp-feature {
+  text-align: left;
+}
+.lp .lp-blog {
+  text-align: left;
+}
+.lp .lp-blog__head {
+  text-align: left;
+}
+.lp .lp-blog__grid {
+  margin-left: 0;
+  margin-right: 0;
+}
+.lp .lp-article {
+  text-align: left;
+}
+.lp .lp-article__body {
+  text-align: left;
 }
 
 /* ==========================================================
