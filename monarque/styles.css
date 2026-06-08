@@ -1653,6 +1653,8 @@ em {
   text-transform: uppercase; color: var(--ink-mute);
 }
 .mq-form input[type="text"],
+.mq-form input[type="email"],
+.mq-form input[type="tel"],
 .mq-form textarea {
   padding: 14px 16px;
   background: rgba(255,255,255,0.03);
@@ -1662,9 +1664,68 @@ em {
   cursor: text;
 }
 .mq-form input[type="text"]:focus,
+.mq-form input[type="email"]:focus,
+.mq-form input[type="tel"]:focus,
 .mq-form textarea:focus {
   outline: none; border-color: var(--gold);
   background: rgba(212,175,122,0.04);
+}
+
+/* Checkbox field */
+.mq-field--checkbox {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+}
+.mq-field--checkbox:hover {
+  border-color: rgba(228,188,126,0.4);
+  background: rgba(228,188,126,0.04);
+}
+.mq-field--checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0; width: 0; height: 0;
+}
+.mq-field__checkbox-box {
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 20px; height: 20px;
+  border-radius: 6px;
+  border: 1.5px solid var(--line-strong);
+  background: rgba(255,255,255,0.03);
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color .2s, background .2s;
+}
+.mq-field--checkbox input[type="checkbox"]:checked ~ .mq-field__checkbox-box {
+  background: linear-gradient(180deg, var(--gold-2), var(--gold));
+  border-color: var(--gold);
+}
+.mq-field__checkbox-box::after {
+  content: '';
+  display: none;
+  width: 5px; height: 9px;
+  border: 2px solid #1a1108;
+  border-top: none; border-left: none;
+  transform: rotate(45deg) translateY(-1px);
+}
+.mq-field--checkbox input[type="checkbox"]:checked ~ .mq-field__checkbox-box::after {
+  display: block;
+}
+.mq-field__checkbox-label {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.mq-field__checkbox-label strong {
+  font-size: 13px; font-weight: 600; color: var(--ink);
+  letter-spacing: 0;
+}
+.mq-field__checkbox-label span {
+  font-size: 12px; color: var(--ink-dim); line-height: 1.5;
+  letter-spacing: 0; text-transform: none; font-weight: 400;
 }
 .mq-form textarea { resize: vertical; min-height: 100px; font-family: inherit; }
 .mq-form input[type="file"] {

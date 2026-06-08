@@ -30,8 +30,11 @@
   }
 
   const { fields = {}, images = {} } = payload;
-  const domain = fields.domain || 'yourdomain.com';
+  const domain    = fields.domain    || 'yourdomain.com';
   const brandName = fields.brandName || domain.replace(/\.(com|io|co|net|org)$/i, '');
+  const email     = fields.email  || '';
+  const phone     = fields.phone  || '';
+  const showBlog  = fields.showBlog === '1';
 
   document.title = `${domain} · Marquee Domain Preview`;
   ribbonDomain.textContent = domain;
@@ -260,6 +263,21 @@
               <div style="font-family: var(--serif-display); font-size: 36px; color: #fff;">18K+</div>
             </div>
           </div>
+
+          <!-- Contact strip -->
+          ${(email || phone) ? `
+          <div style="display:flex; gap:32px; flex-wrap:wrap; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 16px;">
+            ${email ? `
+            <a href="mailto:${esc(email)}" style="display:flex; align-items:center; gap:10px; color:var(--ink-mute); font-size:14px; text-decoration:none; transition: color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink-mute)'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              ${esc(email)}
+            </a>` : ''}
+            ${phone ? `
+            <a href="tel:${esc(phone)}" style="display:flex; align-items:center; gap:10px; color:var(--ink-mute); font-size:14px; text-decoration:none; transition: color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink-mute)'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.89a16 16 0 0 0 6.06 6.06l1.21-1.21a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              ${esc(phone)}
+            </a>` : ''}
+          </div>` : ''}
         </div>
 
         <div class="lp-hero__img" style="margin: 0; position: absolute; right: 0; top: 0; bottom: 0; width: 55%; max-width: 1000px; border: none; border-radius: 0; z-index: 1; mask-image: linear-gradient(to right, transparent, black 40%); -webkit-mask-image: linear-gradient(to right, transparent, black 40%);">
@@ -267,8 +285,8 @@
         </div>
       </section>
 
-      <!-- ===== LONG-FORM BLOG ARTICLE ===== -->
-      ${blogHTML}
+      <!-- ===== LONG-FORM BLOG ARTICLE (conditional) ===== -->
+      ${showBlog ? blogHTML : ''}
 
       <!-- Value Factors (cards — left aligned) -->
       <section class="lp-features" style="background: rgba(10,8,6,0.6); padding: 120px 48px; text-align: left;">
@@ -288,7 +306,8 @@
         </div>
       </section>
 
-      <!-- Insights / Blog grid (left aligned) -->
+      <!-- Insights / Blog grid (only when blog enabled) -->
+      ${showBlog ? `
       <section class="lp-blog" style="padding: 120px 48px; max-width: 1300px; margin: 0; text-align: left;">
         <div class="lp-blog__head" style="align-items: flex-end; margin-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 24px; text-align: left;">
           <div>
@@ -315,7 +334,7 @@
             </article>
           `).join('')}
         </div>
-      </section>
+      </section>` : ''}
 
       <!-- Why Choose Us (left aligned) -->
       <section style="padding: 120px 48px; text-align: left; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px; background: radial-gradient(circle at bottom left, rgba(228,188,126,0.05) 0%, transparent 60%);">
