@@ -34,6 +34,7 @@
   const brandName = fields.brandName || domain.replace(/\.(com|io|co|net|org)$/i, '');
   const email     = fields.email  || '';
   const phone     = fields.phone  || '';
+  const price     = fields.price  || '';
   const showBlog  = fields.showBlog === '1';
 
   document.title = `${domain} · Marquee Domain Preview`;
@@ -236,7 +237,17 @@
           </div>
           <h1 class="lp-hero__domain" style="font-size: clamp(48px, 6vw, 84px); color: #fff; margin-bottom: 24px; line-height: 1.1;">${esc(domain)}</h1>
           <p class="lp-hero__tagline" style="font-family: var(--serif-italic); font-style: italic; font-size: 28px; color: var(--gold); margin-bottom: 24px;">${esc(heroTagline)}</p>
-          <p style="font-family: var(--sans); font-size: 18px; color: var(--ink-mute); max-width: 560px; margin-bottom: 48px; line-height: 1.6;">${esc(heroDesc)}</p>
+          <p style="font-family: var(--sans); font-size: 18px; color: var(--ink-mute); max-width: 560px; margin-bottom: ${price ? '28px' : '48px'}; line-height: 1.6;">${esc(heroDesc)}</p>
+
+          ${price ? `
+          <div style="display:inline-flex; align-items:center; gap:16px; background: linear-gradient(135deg, rgba(228,188,126,0.12), rgba(228,188,126,0.05)); border: 1px solid rgba(228,188,126,0.4); border-radius: 14px; padding: 16px 28px; margin-bottom: 40px;">
+            <div>
+              <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 4px;">ASKING PRICE</div>
+              <div style="font-family: var(--serif-display); font-size: 36px; color: var(--gold); line-height: 1;">${esc(price)}</div>
+            </div>
+            <div style="width: 1px; height: 48px; background: rgba(228,188,126,0.25);"></div>
+            <div style="font-size: 13px; color: var(--ink-mute); line-height: 1.5; max-width: 180px;">Premium domain · One-time acquisition</div>
+          </div>` : ''}
 
           <div class="lp-hero__cta-row" style="justify-content: flex-start; margin-bottom: 80px;">
             <button class="btn btn--gold" style="padding: 16px 36px; font-size: 12px;">LAUNCH YOUR SITE →</button>
